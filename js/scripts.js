@@ -132,7 +132,7 @@ $(document).ready(function(){
 
 	if ($('#carousel-holder').exists()){
 
-		var duration = 1000;
+		var duration = 10;
 		var curousel_ready_click = true
 		var $carousel_holder = $('#carousel-holder');
 		$('#carousel-holder .btn-prev').click(function(){
