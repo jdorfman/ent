@@ -887,45 +887,7 @@ nav a {color:#22221e;}
 /* img-block */
 .img-block {padding:12px 0 43px;}
 .img-block img {vertical-align:top;}
-/* trusted */
-.trusted {
-	width:960px;
-	margin:0 auto;
-	padding:30px 0 18px;
-}
-.trusted:after {
-	clear:both;
-	content:"";
-	display:block;
-}
-.trusted .str {
-	float:left;
-	padding:0 5px 0 0;
-	font:14px/46px 'OpenSansBold';
-	text-transform:uppercase;
-	color:#32322e;
-	letter-spacing:1px;
-}
-.trusted .logos {
-	overflow:hidden;
-	list-style:none;
-	margin:0;
-	padding:0;
-}
-.trusted .logos li {
-	float:left;
-	padding:0 0 0 19px;
-}
-.trusted .logos .tbl {
-	cursor:pointer;
-	height:46px;
-	display:table;
-}
-.trusted .logos .tbl-cell {
-	display:table-cell;
-	vertical-align:middle;
-}
-.trusted .logos img {vertical-align:top;}
+
 /* price-block */
 .price-block {
 	margin:0 auto;
