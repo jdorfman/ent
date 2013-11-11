@@ -271,7 +271,41 @@ nav a {color:#22221e;}
 	display:table-cell;
 	vertical-align:middle;
 }
-.clients li img {vertical-align:top;}
+
+.clients li .image {vertical-align:top;}
+
+.clients li .image { background: url('../images/trusted-logos.png') no-repeat; }
+.clients li .image.kixeye {
+	background-position: 0 -3px;
+	width: 107px;
+	height: 17px;
+	margin-top: 6px;
+}
+.clients li .image.thenextweb {
+	background-position: -117px -3px;
+	width: 57px;
+	height: 17px;
+	margin-top: 6px;
+}
+.clients li .image.stumbleupon {
+	background-position: -184px 0;
+	width: 103px;
+	height: 22px;
+	margin-top: 4px;
+}
+.clients li .image.jquery {
+	background-position: -297px -1px;
+	width: 94px;
+	height: 21px;
+	margin-top: 6px;
+}
+.clients li .image.nissan {
+	background-position: -401px -3px;
+	width: 115px;
+	height: 16px;
+	margin-top: 6px;
+}
+
 /* test-form */
 .test-form {
 	text-align:center;
