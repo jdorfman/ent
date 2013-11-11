@@ -94,6 +94,10 @@ var n = this,
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 $(document).ready(function(){
 	jQuery.fn.exists = function(){
@@ -207,13 +211,16 @@ $(document).ready(function(){
 	}
 	
 	if ($('.price-form .btn.open-pricing').exists()) {
+		$(".price-form .text-hold .unit").click(function() {
+			$('.price-form .text-hold #lbl-001.text').focus();
+		});
 		$('.price-form .btn.open-pricing').click(function() {
 			var enteredTB = $('.price-form .text-hold #lbl-001.text').val();
 			if (!isNaN(enteredTB) && enteredTB !== "") {
 				var priceSection = $(this).closest('.price-form').next('.price-section');
 				priceSection.slideDown();
 				$('div.total .value', priceSection).html("$" + calculateBandwidthPrice(enteredTB).formatMoney(2));
-				$('div.total .name', priceSection).html(enteredTB + "TB");
+				$('div.total .name', priceSection).html(numberWithCommas(enteredTB) + "TB");
 			}
 			return false;
 		});

@@ -104,6 +104,7 @@ p {margin:0 0 19px;}
 	background:#ff7012;
 	padding:0 10px;
 }
+input.btn { border: none; cursor: pointer; }
 .btn.inactive {background-color:#33332f;}
 .btn:hover {
 	text-decoration:none;
