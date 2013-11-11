@@ -173,7 +173,12 @@ header .phone {
 	font-weight:normal;
 	font-family:'OpenSansBold';
 	letter-spacing:2px;
+	color: #22221e;
 }
+header .phone:hover {
+	text-decoration: underline;
+}
+
 .top-area .is-sticky {width:100%;}
 .is-sticky header {background-position:0 0;}
 .is-sticky header .holder {
@@ -465,7 +470,7 @@ nav a {color:#22221e;}
 .side-menu .active .ico-6 {background-position:-125px -24px;}
 /* testing-form */
 .testing-form {
-	border:1px solid #f6f6f3;
+	border:1px solid #f3f3f0;
 	padding:6px 9px 10px;
 	background:#fff;
 	margin:0 0 10px;
@@ -492,8 +497,8 @@ nav a {color:#22221e;}
 	width:100%;
 	padding:0 0 3px;
 	text-transform:uppercase;
-	font:11px/14px 'OpenSansBold';
-	word-spacing:-2px;
+	font:.69em 'OpenSansBold';
+	word-spacing:-.05em;
 }
 .testing-form label span {font-family:'OpenSans';}
 .testing-form .text {
@@ -529,16 +534,17 @@ nav a {color:#22221e;}
 	padding:0;
 	border:0;
 	cursor:pointer;
-	background:#ff6f00;
+	background:#8D8D8D;
 	width:90%;
 	height:30px;
 	color:#fff;
 	text-transform:uppercase;
 	font:13px/30px 'OpenSansBold';
 	text-align:center;
+	box-shadow: inset 0 0 0 1px #fff;
 }
-.btn-chat:hover {background:#ff9300; text-decoration:none;}
-.btn-chat:active {background:#ffbc00;}
+.btn-chat:hover {background:#979797; text-decoration:none;}
+.btn-chat:active {background:#A3A2A2;}
 /* testimonial */
 .testimonial {
 	color:#fff;
@@ -1264,6 +1270,7 @@ footer .col-3 {width:232px;}
 footer h3 {
 	margin:0 0 3px;
 	font:14px/17px 'OpenSansBold';
+	text-transform: uppercase;
 }
 footer a {color:#656562;}
 footer .list {
@@ -1278,7 +1285,7 @@ footer .dlist {
 footer .dlist dt {
 	float:left;
 	clear:both;
-	width:55px;
+	width:84px;
 	padding:0 3px 0 0;
 }
 footer .dlist dd {
@@ -1312,7 +1319,7 @@ footer .phone {
 footer .box .str {
 	display:block;
 	font:14px/17px 'OpenSansBold';
-	padding:0 0 3px;
+	padding:0 0 7px;
 }
 footer .socials {
 	list-style:none;
@@ -1364,4 +1371,8 @@ footer .socials .ico-3 {background-position:-100px 0;}
 .popup h3 {
 	font:15px/18px 'OpenSansBold';
 	margin:0 0 13px;
+}
+
+@media only screen and (max-height: 745px){
+	ul.side-menu { display: none !important; }
 }

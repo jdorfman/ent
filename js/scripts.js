@@ -1,3 +1,100 @@
+// set up the bandwidth tiers
+// if you want the tier to never end, use NaN
+var bandwidthTiers = [
+	{
+		'start': 0,
+		'end': 50,
+		'price': .05
+	},
+	{
+		'start': 51,
+		'end': 150,
+		'price': .040
+	},
+	{
+		'start': 151,
+		'end': 350,
+		'price': .035
+	},
+	{
+		'start': 351,
+		'end': 1024,
+		'price': .030
+	},
+	{
+		'start': 1024,
+		'end': NaN,
+		'price': .020
+	},
+];
+
+// function used for sorting numbers
+function sortArrayByInt(a, b){
+	//set the element to the beginning tier number
+	var a = a.start;
+	var b = b.start;
+
+	// return whether it is greator or smaller
+	return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+}
+
+function calculateBandwidthPrice(usage) {
+	// see what first tier it falls into
+	var tierIndex = 0;
+	for (var i=0; i<bandwidthTiers.length; i++) {
+		if (bandwidthTiers[i].end >= usage) {
+			tierIndex = i;
+			break;
+		} else if (usage > bandwidthTiers[bandwidthTiers.length-1].start) {
+			tierIndex = bandwidthTiers.length-1;
+			break;
+		}
+	}
+
+	// set the selected tier
+	var firstTier = bandwidthTiers[tierIndex];
+	var nextTier = null;
+	if (tierIndex+1 < bandwidthTiers.length) {
+		nextTier = bandwidthTiers[tierIndex+1];
+	}
+
+	// check what value to return
+	var bwPrice = 0.0;
+	if (nextTier == null || firstTier.start == usage) {
+		// there's no tier next up, so just use the first tier price
+		bwPrice = firstTier.price;
+	} else {
+		// there is a tier above it, so calclaute the bw price based on the two tiers
+
+		// get the percentage of how in between the bandwidth amount is between the two tiers
+		var percentInBetween = (usage - firstTier.start) / (nextTier.start - firstTier.start);
+
+		// see how much we need to add to the price to give them discounts
+		var priceAddition = (firstTier.price - nextTier.price) * percentInBetween;
+
+
+		// give them their final bw price
+		bwPrice = firstTier.price - priceAddition;
+	}
+
+	return bwPrice * (usage * 1024);
+}
+
+// sort the array of tiers so we can iterate on them properly
+bandwidthTiers.sort(sortArrayByInt);
+
+Number.prototype.formatMoney = function(c, d, t){
+var n = this, 
+    c = isNaN(c = Math.abs(c)) ? 2 : c, 
+    d = d == undefined ? "." : d, 
+    t = t == undefined ? "," : t, 
+    s = n < 0 ? "-" : "", 
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+    j = (j = i.length) > 3 ? j % 3 : 0;
+   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ };
+
+
 $(document).ready(function(){
 	jQuery.fn.exists = function(){
 		return this.length > 0;
@@ -111,7 +208,13 @@ $(document).ready(function(){
 	
 	if ($('.price-form .btn.open-pricing').exists()) {
 		$('.price-form .btn.open-pricing').click(function() {
-			$(this).closest('.price-form').next('.price-section').slideToggle();
+			var enteredTB = $('.price-form .text-hold #lbl-001.text').val();
+			if (!isNaN(enteredTB) && enteredTB !== "") {
+				var priceSection = $(this).closest('.price-form').next('.price-section');
+				priceSection.slideDown();
+				$('div.total .value', priceSection).html("$" + calculateBandwidthPrice(enteredTB).formatMoney(2));
+				$('div.total .name', priceSection).html(enteredTB + "TB");
+			}
 			return false;
 		});
 	}
@@ -122,10 +225,8 @@ $(document).ready(function(){
 		$(window).scroll(function(){
 			var pos = $(window).scrollTop();
 			var win_height = $(window).height();
-			if (team_area_pos > pos + win_height/10 && team_area_pos < pos + win_height*3/4){
+			if (team_area_pos > pos + win_height/10 && team_area_pos < pos + win_height*3/4 && !team_area.find('.holder img').hasClass("active")){
 				team_area.find('.holder img').addClass('active');
-			} else {
-				team_area.find('.holder img').removeClass('active');
 			}
 		});
 	}
@@ -273,7 +374,6 @@ $(document).ready(function(){
 		$('.carousel .slide').hide();
 		$(window).scroll(function(){
 			if (!carousel_visible_){
-				console.log('twc' + top_wrap_carousel);
 				 if (top_wrap_carousel < ($(window).scrollTop() + ($(window).height() / 2))) {
 				 	$('.carousel .slide-current').fadeIn().promise().done(function(){
 						$('.carousel .slide-prev, .carousel .slide-next').fadeIn();
