@@ -123,6 +123,7 @@ input.btn { border: none; cursor: pointer; }
 	padding:21px 0 0;
 }
 .orange {color:#ff6f11;}
+.small {font-size: x-small}
 .alignright {float:right !important;}
 /* top-area */
 .top-area {
