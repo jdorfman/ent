@@ -391,5 +391,17 @@ $(document).ready(function(){
 			}
 		})
 	}
-	
+
+	setTimeout(function() {
+		if (window.location.hash) {
+			$(window).scrollTop($('a[name='+window.location.hash.substr(1)+']').offset().top-$("header").outerHeight());
+		}
+	}, 54);
+
+	$('a[href^=#]').click(function(e){
+		var name = $(this).attr('href').substr(1);
+		var pos = $('a[name='+name+']').offset().top-$("header").outerHeight();
+		$('body').scrollTop(pos);
+		e.preventDefault();
+	});
 });
