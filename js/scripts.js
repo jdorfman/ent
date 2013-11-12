@@ -289,6 +289,18 @@ $(document).ready(function(){
 		$(".price-form .text-hold .unit").click(function() {
 			$('.price-form .text-hold .text').focus();
 		});
+
+		$('.price-form .text-hold .text').keyup(function(e){
+			e.preventDefault();
+			if(e.keyCode == 13){
+				$('.price-form .btn.open-pricing').click();
+			}
+		})
+
+		$('.price-form form').submit(function(e) {
+			e.preventDefault();
+		});;
+
 		$('.price-form .btn.open-pricing').click(function() {
 			var enteredTB = $('.price-form .text-hold .text').val();
 			if (!isNaN(enteredTB) && enteredTB !== "") {
@@ -296,6 +308,17 @@ $(document).ready(function(){
 				priceSection.slideDown();
 				$('div.total .value', priceSection).html("$" + calculateBandwidthPrice(enteredTB).formatMoney(2));
 				$('div.total .name', priceSection).html(numberWithCommas(enteredTB) + "TB");
+
+				// fill in the bandwidth field in the form below
+				$('#bandwidth-pricing-hidden option').each(function() {
+					// check if range is in
+					
+				});
+
+				// remove stupid auto form field
+				if ($("#bandwidth-pricing-hidden").length > 0) {
+					$("#bandwidth-pricing-hidden").prev().remove();
+				}
 			}
 			return false;
 		});
@@ -467,7 +490,6 @@ $(document).ready(function(){
 						$('.carousel .slide-prev, .carousel .slide-next').fadeIn();
 						carousel_visible_ = true;
 					})
-					
 				 }
 			}
 		})
