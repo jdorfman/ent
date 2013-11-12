@@ -98,6 +98,81 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// form validation
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+function validateURL(textval) {
+	var urlregex = new RegExp("^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+	return urlregex.test(textval);
+}
+
+function checkRequiredFields(form) {
+	//attack to all form submit buttons
+	$(form + ' input, ' + form + ' textarea ,' + form + ' select').click(function(e) {
+		if ($(this).hasClass('red-border')) $(this).removeClass('red-border');
+	}).change( function() {
+		if ($(this).hasClass('red-border')) $(this).removeClass('red-border');
+	});
+
+	$(form).submit(function(e) {
+		//keep track of fails
+		var counter = 0;
+
+		//required fields
+		var fields = $(this).find('.required');
+
+		//remove required border
+		fields.each(function() { $(this).removeClass('red-border'); });
+		$('.select-area',this).removeClass('red-border');
+
+		//check required fields
+		fields.each( function() {
+			//check input, textarea, and select
+			if ($(this).is("input") || $(this).is("textarea")) {
+				if ($(this).val() === "" || $(this).val() == null) {
+					counter++;
+					$(this).addClass('red-border');
+				}
+
+				if ($(this).data('value') === $(this).val()) {
+					counter++;
+					$(this).addClass('red-border');
+				}
+
+				if ($(this).attr('type') === "email") {
+					if (!validateEmail($(this).val())) {
+						counter++;
+						$(this).addClass('red-border');
+					}
+				} else if ($(this).attr('type') === "url") {
+					if (!validateURL($(this).val())) {
+						counter++;
+						$(this).addClass('red-border');
+					}
+				}
+
+				} else if ($(this).is("select")) {
+					if ($(this)[0].selectedIndex <= 0) {
+						counter++;
+						$(this).addClass('red-border');
+						$(this).prev().addClass('red-border');
+					}
+				}
+		});
+
+		//don't submit the form :(
+		if (counter > 0) {
+			return false;
+		} else {
+			//fill out content__c field in form
+			$("input[name='content__c']", $(this)).val('TjMWJFGCrZsrgkTiumWainoraTaYandAd8bapL8Xdks');
+		}
+	});
+}
+
 
 $(document).ready(function(){
 	jQuery.fn.exists = function(){
@@ -212,10 +287,10 @@ $(document).ready(function(){
 	
 	if ($('.price-form .btn.open-pricing').exists()) {
 		$(".price-form .text-hold .unit").click(function() {
-			$('.price-form .text-hold #lbl-001.text').focus();
+			$('.price-form .text-hold .text').focus();
 		});
 		$('.price-form .btn.open-pricing').click(function() {
-			var enteredTB = $('.price-form .text-hold #lbl-001.text').val();
+			var enteredTB = $('.price-form .text-hold .text').val();
 			if (!isNaN(enteredTB) && enteredTB !== "") {
 				var priceSection = $(this).closest('.price-form').next('.price-section');
 				priceSection.slideDown();
@@ -367,12 +442,13 @@ $(document).ready(function(){
 		
 		return false;
 	});
-	$('.top-area .btn-submit').click(function(){
-		$('.top-area .state-2, .top-area .tbl-in >p, .top-area .tbl-in >.ttl').fadeOut().promise().done(function(){
-			$('.top-area .state-3').fadeIn();
+	$('.top-area .btn-submit').click(function(e){
+		$(".test-form form").submit(function() {
+			$('.top-area .state-2, .top-area .tbl-in >p, .top-area .tbl-in >.ttl').fadeOut().promise().done(function(){
+				$('.top-area .state-3').fadeIn();
+			});
 		});
-		
-		return false;
+		return e.preventDefault();
 	})
 	
 	if ($('.carousel').exists()) {
@@ -410,4 +486,6 @@ $(document).ready(function(){
 	if (!(language.toLowerCase() === "en-us" || language.toLowerCase() === "en-ca")) {
 		$("span.phone-number").text("+1 (323) 313-1206");
 	}
+
+	checkRequiredFields('form');
 });

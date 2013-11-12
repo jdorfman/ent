@@ -64,15 +64,32 @@
 					</div>
 					<div class="state-2" style="display:none;">
 						<div class="test-form">
-							<form action="#">
+							<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
+								<input type="hidden" name="lpId" value="-1" />
+								<input type="hidden" name="subId" value="127" />
+								<input type="hidden" name="kw" value="" />
+								<input type="hidden" name="cr" value="" />
+								<input type="hidden" name="searchstr" value="" />
+								<input type="hidden" name="_mkt_disp" value="return" />
+								<input type="hidden" name="_mkt_trk" value="" />
+								<input name="content__c" type='text' value="" class="hidden" />
+								<input name="LeadSource" type="hidden" value="MaxCDN.com">
+								<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Testing Form">
+								<input type="hidden" name="lpurl" value="http://resources.netdna.com/Testing_MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
+								<input type="hidden" name="formid" value="109" />
+								<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success.html" />
+								<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success.html" />
+								<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+								<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success.html" />
+
 								<div class="in">
 									<div class="frame">
-										<label for="lbl-01">URL of the file <span>(must be under 2Mb)</span>:</label>
-										<input class="text" type="text" id="lbl-01">
+										<label>URL of the file <span>(must be under 2Mb)</span>:</label>
+										<input class="text required" type="website" name="Website" value="http://" data-value="http://">
 									</div>
 									<div class="frame">
-										<label for="lbl-02">Your email <span>(to send the report to):</span></label>
-										<input class="text" type="text" id="lbl-02">
+										<label>Your email <span>(to send the report to):</span></label>
+										<input class="text required" type="email" name="Email">
 									</div>
 									<input class="btn btn-submit" type="submit" value="Get Your Speed Report">
 								</div>
@@ -128,16 +145,33 @@
 					<li><a href="#pricing">PRICING<span class="ico ico-6">&nbsp;</span></a></li>
 				</ul>
 				<div class="testing-form">
-					<form action="#">
+
+					<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
+						<input type="hidden" name="lpId" value="-1" />
+						<input type="hidden" name="subId" value="127" />
+						<input type="hidden" name="kw" value="" />
+						<input type="hidden" name="cr" value="" />
+						<input type="hidden" name="searchstr" value="" />
+						<input type="hidden" name="_mkt_disp" value="return" />
+						<input type="hidden" name="_mkt_trk" value="" />
+						<input name="content__c" type='text' value="" class="hidden" />
+						<input name="LeadSource" type="hidden" value="MaxCDN.com">
+						<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Testing Form">
+						<input type="hidden" name="lpurl" value="http://resources.netdna.com/Testing_MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
+						<input type="hidden" name="formid" value="109" />
+						<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success.html" />
+						<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success.html" />
+						<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+
 						<h3 class="orange">TEST OUR PERFORMANCE</h3>
 						<p>Need convincing? We’ll make you a believer. Give us a file from your server or current CDN. We’ll run a Catchpoint test and send you the results, ASAP!</p>
 						<div class="group">
-							<label for="lbl-03">URL of a FILE <span>(must be under 2MB):</span></label>
-							<input class="text" type="text" id="lbl-03">
+							<label>URL of a FILE <span>(must be under 2MB):</span></label>
+							<input class="text required" type="text" name="Website" value="http://" data-value="http://">
 						</div>
 						<div class="group">
-							<label for="lbl-04">Your email <span>(to send the report to):</span></label>
-							<input class="text" type="text" id="lbl-04">
+							<label>Your email <span>(to send the report to):</span></label>
+							<input class="text required" type="email" name="Email">
 						</div>
 						<div class="btn-holder">
 							<input class="btn-submit" type="submit" value="get the speed report">
@@ -436,25 +470,44 @@
 		<div class="popup" id="popup-contact">
 			<strong class="orange large-heading">Ready for Your Test Drive?</strong>
 			<p>Please fill out the form below, we’ll give you a call to set up your free seven day enterprise trial. Try us out. See how fast we are for yourself. Give us a support call — you’ll have access to priority support. We’re sure that our service and performance will exceed your expectations.</p>
-			<form action="#">
+			<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
+				<input type="hidden" name="lpId" value="-1" />
+				<input type="hidden" name="subId" value="127" />
+				<input type="hidden" name="kw" value="" />
+				<input type="hidden" name="cr" value="" />
+				<input type="hidden" name="searchstr" value="" />
+				<input type="hidden" name="_mkt_disp" value="return" />
+				<input type="hidden" name="_mkt_trk" value="" />
+				<input name="content__c" type='text' value="" class="hidden" />
+				<input name="LeadSource" type="hidden" value="MaxCDN.com">
+				<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Contact Us Form">
+				<input type="hidden" name="lpurl" value="http://resources.netdna.com/MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
+				<input type="hidden" name="formid" value="15" />
+				<input type="hidden" name="returnURL" value="http://enterprise.maxcdn.com/success.html" />
+				<input type="hidden" name="retURL" value="http://enterprise.maxcdn.com/success.html" />
+				<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+
 				<div class="cols">
 					<div class="col">
 						<div class="trial-form custom-form">
-							<label for="lbl-11">First Name</label>
-							<input class="text" type="text" id="lbl-11" >
-							<label for="lbl-12">Last Name</label>
-							<input class="text" type="text" id="lbl-12" >
-							<label for="lbl-13">Email Address</label>
-							<input class="text" type="text" id="lbl-13" >
-							<label for="lbl-14">Phone Number</label>
-							<input class="text" type="text" id="lbl-14" >
-							<label for="lbl-15">URL</label>
-							<input class="text" type="text" id="lbl-15" value="http://" >
-							<label for="lbl-16">Your Monthly Bandwidth Usage</label>
-							<select id="lbl-16" title="Select your monthly bandwidth usage">
-								<option>option 1</option>
-								<option>option 2</option>
-								<option>option 3</option>
+							<label>First Name</label>
+							<input class="text required" type="text" name="FirstName" >
+							<label>Last Name</label>
+							<input class="text required" type="text" name="LastName" >
+							<label>Email Address</label>
+							<input class="text required" type="email" name="Email" >
+							<label>Phone Number</label>
+							<input class="text required" type="text" name="Phone" >
+							<label>URL</label>
+							<input class="text required" type="text" name="Website" value="http://" data-value="http://" >
+							<label>Your Monthly Bandwidth Usage</label>
+							<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
+								<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
+								<option value="Under 5TB">Under 5TB</option>
+								<option value="5TB - 10TB">5TB - 10TB</option>
+								<option value="11 - 100TB">11 - 100TB</option>
+								<option value="101TB - 1,000TB">101TB - 1,000TB</option>
+								<option value="1PB+">1PB+</option>
 							</select>
 						</div>
 					</div>

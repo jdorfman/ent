@@ -79,9 +79,10 @@ fieldset {
 }
 input,
 select,
-textarea {
+textarea, button {
 	font:12px/15px 'OpenSans', Arial, Helvetica, sans-serif;
 	vertical-align:middle;
+	outline: none;
 }
 blockquote, q {quotes:none;}
 q:before,
@@ -1166,7 +1167,6 @@ nav a {color:#22221e;}
 }
 .trial-form {
 	margin:-12px 0 0;
-	overflow:hidden;
 }
 .trial-form label,
 .feedback-form label {
@@ -1382,13 +1382,17 @@ footer .socials .ico-3 {background-position:-100px 0;}
 .popup .trial-form .text,
 .popup .trial-form textarea {width:294px;}
 .popup .trial-form select,
-.popup .trial-form .select-area {width:312px;}
+.popup .trial-form .select-area {width:312px !important;}
 .popup h3 {
 	font:15px/18px 'OpenSansBold';
 	margin:0 0 13px;
 }
 
 .clearfix { clear: both; }
+.hidden { display: none; }
+.red-border {
+	border: 1px solid red !important;
+}
 
 @media only screen and (max-height: 745px){
 	ul.side-menu { display: none !important; }
