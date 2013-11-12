@@ -404,4 +404,10 @@ $(document).ready(function(){
 		$('body').scrollTop(pos);
 		e.preventDefault();
 	});
+
+	//replace phone number in nav dropdown if not US/CAN
+	var language = window.navigator.userLanguage || window.navigator.language;
+	if (!(language.toLowerCase() === "en-us" || language.toLowerCase() === "en-ca")) {
+		$("span.phone-number").text("+1 (323) 313-1206");
+	}
 });
