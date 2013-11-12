@@ -442,13 +442,18 @@ $(document).ready(function(){
 		
 		return false;
 	});
-	$('.top-area .btn-submit').click(function(e){
-		$(".test-form form").submit(function() {
-			$('.top-area .state-2, .top-area .tbl-in >p, .top-area .tbl-in >.ttl').fadeOut().promise().done(function(){
-				$('.top-area .state-3').fadeIn();
-			});
-		});
-		return e.preventDefault();
+	$('.top-area form').submit(function(e){
+
+		setTimeout(function() {
+			if ($('.top-area form .red-border').length <= 0) {
+				$.post($('.top-area form').attr("action"), $('.top-area form').serialize());
+				$('.top-area .state-2, .top-area .tbl-in >p, .top-area .tbl-in >.ttl').fadeOut().promise().done(function(){
+					$('.top-area .state-3').fadeIn();
+				});
+			}
+		}, 475);
+
+		e.preventDefault();
 	})
 	
 	if ($('.carousel').exists()) {
@@ -476,9 +481,11 @@ $(document).ready(function(){
 
 	$('a[href^=#]').click(function(e){
 		var name = $(this).attr('href').substr(1);
-		var pos = $('a[name='+name+']').offset().top-$("header").outerHeight();
-		$('body').scrollTop(pos);
-		e.preventDefault();
+		if (name !== "") {
+			var pos = $('a[name='+name+']').offset().top-$("header").outerHeight();
+			$('body').scrollTop(pos);
+			e.preventDefault();
+		}
 	});
 
 	//replace phone number in nav dropdown if not US/CAN
