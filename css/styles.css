@@ -639,8 +639,8 @@ nav a {color:#22221e;}
 	line-height:0;
 }
 .tab-area .logos-2 {
-	padding-top:19px;
-	padding-bottom:28px;
+	padding: 37px 0;
+	margin-top: 1px;
 }
 .tab-area .logos li {
 	display:inline-block;
@@ -939,8 +939,7 @@ nav a {color:#22221e;}
 	overflow:hidden;
 	padding:0 0 10px;
 }
-.ask-form textarea {
-	float:left;
+.ask-form textarea, .ask-form input {
 	background:#fff;
 	border:1px solid #ccccc7;
 	margin:0;
@@ -951,6 +950,20 @@ nav a {color:#22221e;}
 	font-size:14px;
 	line-height:17px;
 	color:#323232;
+	float: left;
+}
+
+.ask-form textarea{
+	padding:6px 9px;
+	width:422px;
+	height:81px;
+}
+
+.ask-form input {
+	padding:6px 9px;
+	width:422px;
+	height:31px;
+	margin-bottom: 7px;
 }
 .ask-form .btn-holder {overflow:hidden;}
 .ask-form .btn {
@@ -1372,6 +1385,8 @@ footer .socials .ico-3 {background-position:-100px 0;}
 	font:15px/18px 'OpenSansBold';
 	margin:0 0 13px;
 }
+
+.clearfix { clear: both; }
 
 @media only screen and (max-height: 745px){
 	ul.side-menu { display: none !important; }
