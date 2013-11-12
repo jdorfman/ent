@@ -310,10 +310,25 @@ $(document).ready(function(){
 				$('div.total .name', priceSection).html(numberWithCommas(enteredTB) + "TB");
 
 				// fill in the bandwidth field in the form below
+				var range = null;
 				$('#bandwidth-pricing-hidden option').each(function() {
 					// check if range is in
-					
+					if ($(this).data('range') !== "none") {
+						var rangeArray = $(this).data('range').split('-');
+						if (enteredTB >= parseInt(rangeArray[0]) && enteredTB <= parseInt(rangeArray[1]) && range == null) {
+							// this is the range
+							range = $(this);
+						}
+					}
 				});
+				if (range == null) {
+					//at the end of the array 
+					range = $('#bandwidth-pricing-hidden option').last();
+				}
+
+				// select range
+				$('#bandwidth-pricing-hidden option').attr('selected', false);
+				range.attr('selected', true);
 
 				// remove stupid auto form field
 				if ($("#bandwidth-pricing-hidden").length > 0) {
