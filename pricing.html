@@ -310,7 +310,7 @@
 			</div>
 			<div class="col col-3">
 				<div class="box">
-					<a href="#" class="btn">CHAT NOW</a>
+					<a href="#" class="btn" onclick="return startWidget('chat');">CHAT NOW</a>
 					<strong class="phone">+1 (877) 629-2361</strong>
 					<span class="str orange">Supercharge your site</span>
 					<ul class="socials">
@@ -368,5 +368,21 @@
     <script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<script type="text/javascript">document.write(unescape("%3Cscript src='https://www.snapengage.com/snapabug.js' type='text/javascript'%3E%3C/script%3E"));</script>
+	<script type="text/javascript">
+	SnapABug.setDomain('.netdna.com');
+	SnapABug.setDomain('.maxcdn.com');
+	SnapABug.setDomain('.hddn.com');
+	SnapABug.setDomain('.cloudcache.com');
+	SnapABug.allowOffline(true);
+	SnapABug.showScreenshotOption(false);
+	SnapABug.init("d1f2393e-a5ce-4a36-bbe7-a82952e64d0d");
+	function startWidget(chatType) {
+	  SnapABug.setCallback('StartChat', function(email,msg,type) {
+		_gaq.push(['_trackPageview', '/livechat/' + chatType + '/']);
+	  });
+	  return SnapABug.startLink();
+	}</script>
 </body>
 </html>

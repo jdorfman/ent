@@ -27,7 +27,7 @@
 					</nav>
 					<a href="#popup-contact" class="fancybox"><strong class="phone">+1 (877) 629-2361</strong></a>
 				</div>
-				<strong class="logo"><a href="index.html">MaxCDN Enterprise</a></strong>
+				<a href="#popup-contact" class="fancybox"><strong class="phone">+1 (877) 629-2361</strong></a>
 			</div>
 		</header><!-- /header -->
 		<div class="block">
@@ -120,7 +120,7 @@
 						</div>
 					</form>
 				</div>
-				<a href="#" class="btn-chat">chat online</a>
+				<a href="#" class="btn-chat" onclick="return startWidget('chat');">chat online</a>
 			</aside>
 		</div><!-- /main-holder -->
 	</div><!-- /main -->
@@ -140,63 +140,80 @@
 			</div><!-- /perfomance-info -->
 			<div class="tab-area" id="tabs-1">
 				<ul class="tabset">
-					<li><a href="#tab-1-1" class="ie-fix">Peering Partners</a></li>
-					<li><a href="#tab-1-2" class="ie-fix">Network Map</a></li>
+					<li><a href="#tab-1-1" class="ie-fix">Network Map</a></li>
+					<li><a href="#tab-1-2" class="ie-fix">Peering Partners</a></li>
 				</ul>
 				<div class="tab-content" id="tab-1-1">
-					<div class="img"><img src="images/img-07.jpg" alt="image description" width="687" height="242" ></div>
-					<ul class="logos">
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-09.jpg" alt="image description" width="69" height="33" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-10.png" alt="image description" width="75" height="21" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-11.jpg" alt="image description" width="54" height="25" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-12.jpg" alt="image description" width="73" height="23" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-13.png" alt="image description" width="72" height="29" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-14.jpg" alt="image description" width="70" height="30" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-15.jpg" alt="image description" width="62" height="45" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-16.jpg" alt="image description" width="79" height="16" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-17.jpg" alt="image description" width="73" height="23" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-18.jpg" alt="image description" width="53" height="33" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-19.jpg" alt="image description" width="73" height="21" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-20.jpg" alt="image description" width="74" height="20" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-21.png" alt="image description" width="76" height="18" ></span></a>
-						</li>
-						<li>
-							<a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-22.jpg" alt="image description" width="74" height="18" ></span></a>
-						</li>
+					<div class="img">
+						<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+						<script type="text/javascript" src="http://cdn-assets.netdna.com/maps/google-maps-marker.js"></script>
+						<script type="text/javascript" src="http://cdn-assets.netdna.com/maps/maps.js"></script>
+						<div id="map_canvas" style="width: 100%; height: 242px;"></div> 
+						<div class="image datacenter-partners"></div>
+						<script type="text/javascript">
+						var map = new NetDNA_Map({
+						  //options
+						  zoomLevel: 1,					//default & minimum zoom level
+						  centerX: 13.507321974039545,	//center of the map, in X coordinates
+						  centerY: 12.815115574218696,	//center of the map, in Y coordinates
+						  containerID: 'map_canvas',	//div element to inject map in. MUST be an ID
+						  lockView: false,				//whether to disable all controls, panning, etc
+						  scrollwheel: false			//whether to disable all controls, panning, etc
+						});
+						</script>
+					</div>
+					<ul class="logos logos-2">
+						<li><span class="tbl-cell"><img src="images/img-23.jpg" alt="image description" width="124" height="44" ></span></li>
+						<li><span class="tbl-cell"><img src="images/img-24.jpg" alt="image description" width="87" height="44" ></span></li>
+						<li><span class="tbl-cell"><img src="images/img-25.jpg" alt="image description" width="61" height="44" ></span></li>
+						<li><span class="tbl-cell"><img src="images/img-26.jpg" alt="image description" width="121" height="44" ></span></li>
 					</ul>
 				</div>
 				<div class="tab-content" id="tab-1-2">
-					<div class="img"><img src="images/img-08.jpg" alt="image description" width="687" height="242" ></div>
-					<ul class="logos logos-2">
-						<li><a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-23.jpg" alt="image description" width="124" height="44" ></span></a></li>
-						<li><a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-24.jpg" alt="image description" width="87" height="44" ></span></a></li>
-						<li><a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-25.jpg" alt="image description" width="61" height="44" ></span></a></li>
-						<li><a href="#" class="tbl"><span class="tbl-cell"><img src="images/img-26.jpg" alt="image description" width="121" height="44" ></span></a></li>
+					<div class="img"><img src="images/img-07.jpg" alt="image description" width="687" height="242" ></div>
+					<ul class="logos">
+						<li>
+							<span class="tbl-cell"><img src="images/img-09.jpg" alt="image description" width="69" height="33" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-10.png" alt="image description" width="75" height="21" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-11.jpg" alt="image description" width="54" height="25" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-12.jpg" alt="image description" width="73" height="23" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-13.png" alt="image description" width="72" height="29" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-14.jpg" alt="image description" width="70" height="30" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-15.jpg" alt="image description" width="62" height="45" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-16.jpg" alt="image description" width="79" height="16" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-17.jpg" alt="image description" width="73" height="23" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-18.jpg" alt="image description" width="53" height="33" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-19.jpg" alt="image description" width="73" height="21" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-20.jpg" alt="image description" width="74" height="20" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-21.png" alt="image description" width="76" height="18" ></span>
+						</li>
+						<li>
+							<span class="tbl-cell"><img src="images/img-22.jpg" alt="image description" width="74" height="18" ></span>
+						</li>
 					</ul>
 				</div>
 			</div><!-- /tab-area -->
@@ -416,7 +433,7 @@
 			</div>
 			<div class="col col-3">
 				<div class="box">
-					<a href="#" class="btn">CHAT NOW</a>
+					<a href="#" class="btn" onclick="return startWidget('chat');">CHAT NOW</a>
 					<strong class="phone">+1 (877) 629-2361</strong>
 					<span class="str orange">Supercharge your site</span>
 					<ul class="socials">
@@ -475,5 +492,21 @@
     <script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<script type="text/javascript">document.write(unescape("%3Cscript src='https://www.snapengage.com/snapabug.js' type='text/javascript'%3E%3C/script%3E"));</script>
+	<script type="text/javascript">
+	SnapABug.setDomain('.netdna.com');
+	SnapABug.setDomain('.maxcdn.com');
+	SnapABug.setDomain('.hddn.com');
+	SnapABug.setDomain('.cloudcache.com');
+	SnapABug.allowOffline(true);
+	SnapABug.showScreenshotOption(false);
+	SnapABug.init("d1f2393e-a5ce-4a36-bbe7-a82952e64d0d");
+	function startWidget(chatType) {
+	  SnapABug.setCallback('StartChat', function(email,msg,type) {
+		_gaq.push(['_trackPageview', '/livechat/' + chatType + '/']);
+	  });
+	  return SnapABug.startLink();
+	}</script>
 </body>
 </html>
