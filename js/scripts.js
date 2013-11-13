@@ -77,7 +77,15 @@ function calculateBandwidthPrice(usage) {
 		bwPrice = firstTier.price - priceAddition;
 	}
 
-	return bwPrice * (usage * 1024);
+	// final bw price
+	var finalPrice = bwPrice * (usage * 1024) * 1.1;
+
+	// if bw cost is less than 800, make it 800
+	if (finalPrice < 800) {
+		finalPrice = 800;
+	}
+
+	return finalPrice;
 }
 
 // sort the array of tiers so we can iterate on them properly
