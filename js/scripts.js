@@ -482,8 +482,10 @@ $(document).ready(function(){
 		}
 	}
 	$('.btn-test').click(function(){
-		$('.top-area .state-1').fadeOut().promise().done(function(){
-			$('.top-area .state-2').fadeIn();
+		$('.top-area .state-1, .top-area strong.ttl, .top-area .tbl-in > p').fadeOut().promise().done(function(){
+			$('.top-area .state-1 strong.ttl').text('Seeing is Believing');
+			$('.top-area .tbl-in > p').text('Paste an URL from your current CDN and we’ll run a CatchPoint test. You’ll see how we stack up against your current service.');
+			$('.top-area .state-2, .top-area strong.ttl, .top-area .tbl-in > p').fadeIn();
 		});
 		
 		return false;
