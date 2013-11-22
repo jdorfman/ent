@@ -181,6 +181,71 @@ function checkRequiredFields(form) {
 	});
 }
 
+//for the orange thingy on the right side...
+function sliderEvents() {
+	$(".orange-slider .icons a").click(function() {
+
+		//check vars
+		var isSliderActive = $(".orange-slider").hasClass("active");
+		var isIconInactive = $(this).hasClass("inactive");
+
+		//user is closing slider
+		if (isSliderActive && !isIconInactive) {
+			//restore all icons
+			$(".orange-slider .icons a").removeClass("inactive");
+
+			//make slider inactive
+			$(".orange-slider").removeClass("active");
+
+			//hide active content slider
+			$(".slider-content > div.active").removeClass("active").addClass("hidden");
+
+			//hide slider content container
+			$(".slider-content").addClass("hidden").removeClass("active");
+		}
+
+		//open new tab or user is switching tabs
+		if ((isSliderActive && isIconInactive) || !isSliderActive) {
+			//make slider active
+			$(".orange-slider").addClass("active");
+
+			//default all icons to their original status and then apply the inactive class
+			$(".orange-slider .icons a").removeClass("inactive").not($(this)).addClass("inactive");
+
+			//hide any sliders
+			$(".slider-content > div.active").removeClass("active").addClass("hidden");
+
+			//show slider for clicked button
+			$(".slider-content > div.slider-" + $(this).attr("href").substr(1)).addClass("active").removeClass("hidden");
+
+			//hide slider content container
+			$(".slider-content").removeClass("hidden").addClass("active");
+
+			//if they clicked on the live chat, set the cookie to disable autopopup
+			if ($(this).attr("href").substr(1) === "chat") {
+				$.cookie("livechat_autopopup", true, {expires: 1, path: '/'});
+			}
+		}
+	});
+	
+	$(".slider-content > div").append("<a href='#' class='slider-close'>");
+	$(".slider-content").on('click', '.slider-close', function(e) {
+		e.preventDefault();
+		
+		//restore all icons
+		$(".orange-slider .icons a").removeClass("inactive");
+
+		//make slider inactive
+		$(".orange-slider").removeClass("active");
+
+		//hide active content slider
+		$(".slider-content > div.active").removeClass("active").addClass("hidden");
+
+		//hide slider content container
+		$(".slider-content").addClass("hidden").removeClass("active");
+
+	});	
+}
 
 $(document).ready(function(){
 	jQuery.fn.exists = function(){
@@ -481,28 +546,6 @@ $(document).ready(function(){
 			}
 		}
 	}
-	$('.btn-test').click(function(){
-		$('.top-area .state-1, .top-area strong.ttl, .top-area .tbl-in > p').fadeOut().promise().done(function(){
-			$('.top-area .state-1 strong.ttl').text('Seeing is Believing');
-			$('.top-area .tbl-in > p').text('Paste an URL from your current CDN and we’ll run a CatchPoint test. You’ll see how we stack up against your current service.');
-			$('.top-area .state-2, .top-area strong.ttl, .top-area .tbl-in > p').fadeIn();
-		});
-		
-		return false;
-	});
-	$('.top-area form').submit(function(e){
-
-		setTimeout(function() {
-			if ($('.top-area form .red-border').length <= 0) {
-				$.post($('.top-area form').attr("action"), $('.top-area form').serialize());
-				$('.top-area .state-2, .top-area .tbl-in >p, .top-area .tbl-in >.ttl').fadeOut().promise().done(function(){
-					$('.top-area .state-3').fadeIn();
-				});
-			}
-		}, 475);
-
-		e.preventDefault();
-	})
 	
 	if ($('.carousel').exists()) {
 		var top_wrap_carousel = $('.carousel').offset().top,
@@ -522,13 +565,15 @@ $(document).ready(function(){
 
 	setTimeout(function() {
 		if (window.location.hash) {
-			$(window).scrollTop($('a[name='+window.location.hash.substr(1)+']').offset().top-$("header").outerHeight());
+			if ($('a[name='+window.location.hash.substr(1)+']') > 0) {
+				$(window).scrollTop($('a[name='+window.location.hash.substr(1)+']').offset().top-$("header").outerHeight());
+			}
 		}
 	}, 54);
 
 	$('a[href^=#]').click(function(e){
 		var name = $(this).attr('href').substr(1);
-		if (name !== "") {
+		if (name !== "" && name !== null && $('a[name='+name+']') > 0) {
 			var pos = $('a[name='+name+']').offset().top-$("header").outerHeight();
 			$('body').scrollTop(pos);
 			e.preventDefault();
@@ -542,4 +587,6 @@ $(document).ready(function(){
 	}
 
 	checkRequiredFields('form');
+	sliderEvents();
+
 });
