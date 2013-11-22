@@ -1537,11 +1537,10 @@ html.mobile-device .orange-slider, html.no-csstransforms .orange-slider, html.lt
 	z-index: 8040;
 	left: -21px;
 	top: -21px;
-	width: 25px;
-	height: 25px;
+	width: 33px;
+	height: 33px;
 }
-html.svg .slider-content .slider-close { background: url('img/svg/icon-close-x.svg') center top no-repeat; }
-html.no-svg .slider-content .slider-close { background: url('img/png/icon-close-x.png') center top center top no-repeat; }
+.slider-content .slider-close { background: url('../images/icon-close-x.png') center top no-repeat; }
 
 /* ==========================================================================
 Column settings
