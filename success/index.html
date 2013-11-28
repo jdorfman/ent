@@ -138,7 +138,7 @@
 				<div class="alignright">
 					<nav>
 						<ul>
-							<li class="active"><a href="/">HOME</a></li>
+							<li><a href="/">HOME</a></li>
 							<li><a href="/pricing/">PRICING</a></li>
 							<li><a href="/pricing/#calc">CALCULATOR</a></li>
 							<li><a href="#popup-contact" class="fancybox">FREE TRIAL</a></li>
@@ -241,7 +241,7 @@
 				</dl>
 				<h3 class="orange">Address</h3>
 				<address>
-					<span class="str">MaxCDN</span>
+					<span class="str">MaxCDN Enterprise</span>
 					<span class="str">3575 Cahuenga Blvd. West, Suite 330</span>
 					<span class="str">Los Angeles, CA 90068</span>
 				</address>
@@ -264,7 +264,7 @@
 	<div class="hidden-popup">
 		<div class="popup" id="popup-contact">
 			<strong class="orange large-heading">Ready for Your Test Drive?</strong>
-			<p>Please fill out the form below, we'll give you a call to set up your free seven day enterprise trial.<br/>Try us out. See how fast we are for yourself. Give us a support call &mdash; you'll have access to priority support. We're sure that our service and performance will exceed your expectations.</p>
+			<p>Please fill out the form below and we'll give you a call to set up your free seven day MaxCDN Enterprise trial. Try us out and see how fast we are for yourself.</p><p>Give us a support call at <span class="phone-number">(877) 629-2361</span> &mdash; you'll have access to priority support.<br/>We're sure that our service and performance will exceed your expectations.</p>
 			<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
 				<input type="hidden" name="lpId" value="-1" />
 				<input type="hidden" name="subId" value="127" />
@@ -329,21 +329,36 @@
     <script type="text/javascript" src="../js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="../js/scripts.js"></script>
 
-	<script type="text/javascript">document.write(unescape("%3Cscript src='https://www.snapengage.com/snapabug.js' type='text/javascript'%3E%3C/script%3E"));</script>
 	<script type="text/javascript">
-	SnapABug.setDomain('.netdna.com');
-	SnapABug.setDomain('.maxcdn.com');
-	SnapABug.setDomain('.hddn.com');
-	SnapABug.setDomain('.cloudcache.com');
-	SnapABug.allowOffline(true);
-	SnapABug.showScreenshotOption(false);
-	SnapABug.init("d1f2393e-a5ce-4a36-bbe7-a82952e64d0d");
-	function startWidget(chatType) {
-	  SnapABug.setCallback('StartChat', function(email,msg,type) {
-		_gaq.push(['_trackPageview', '/livechat/' + chatType + '/']);
-	  });
-	  return SnapABug.startLink();
-	}</script>
+		(function() {
+			var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+			se.src = '//commondatastorage.googleapis.com/code.snapengage.com/js/f398c989-6722-497a-a8ae-30c146db8f71.js';
+			var done = false;
+			
+			se.onload = se.onreadystatechange = function() {
+				if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+					done = true;
+					var seAgent;
+					SnapABug.setCallback('OpenProactive', function(agent, msg, type) {
+						seAgent = agent;
+						_gaq.push(['_trackEvent', 'SnapEngage', 'proactivePrompt', agent]);
+					});
+
+					SnapABug.setCallback('StartChat', function(email, msg, type) {
+						_gaq.push(['_trackEvent', 'SnapEngage', type + "Engaged", seAgent]);
+					});
+				}
+			};
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+
+			function startWidget(chatType) {
+			  SnapABug.setCallback('StartChat', function(email,msg,type) {
+				_gaq.push(['_trackPageview', '/livechat/' + chatType + '/']);
+			  });
+			  return SnapABug.startLink();
+			}
+		})();
+	</script>
 
 	<script type="text/javascript">
 	var _mfq = _mfq || [];
@@ -372,5 +387,7 @@
 	}());
 	</script>
 
-</body>
+	<script src="//cdn.optimizely.com/js/140761619.js"></script>
+
+	</body>
 </html>

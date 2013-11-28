@@ -625,7 +625,6 @@ nav a {color:#22221e;}
 .carousel {
 	background:#eeeee8;
 	position:relative;
-	top:-17px;
 }
 .carousel .holder {
 	margin:0 auto;
@@ -1018,6 +1017,7 @@ nav a {color:#22221e;}
 	border-top:6px solid #e4e4de;
 	display:none;
 }
+.price-section p strong {font-family: 'OpenSansBold'}
 .price-section .total {
 	color:#22221e;
 	margin:0 0 17px;
@@ -1044,6 +1044,20 @@ nav a {color:#22221e;}
 	position:relative;
 	top:2px;
 }
+.price-section .total .value.strikethrough:before {
+	content: '';
+	width: 100%;
+	height: 4px;
+	background: #ff9300;
+	position: absolute;
+	-webkit-transform: rotate(-07deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	top: 21px;
+	left: 4px;
+}
+
 /* include-list */
 .include-list {
 	list-style:none;
@@ -1542,6 +1556,15 @@ html.mobile-device .orange-slider, html.no-csstransforms .orange-slider, html.lt
 }
 .slider-content .slider-close { background: url('../images/icon-close-x.png') center top no-repeat; }
 
+/*notice for people over 1000TB*/
+.price-section .bw-tier-notice {
+	background: #F3F3F3;
+	padding: 20px;
+	border: 1px solid #E9E9E9;
+	margin-bottom: 28px;
+	display: none;
+}
+
 /* ==========================================================================
 Column settings
 ========================================================================== */
@@ -1666,6 +1689,69 @@ Forms for slider
 	margin: -10px 0 15px 0;
 }
 
+.sidebar-phone {
+	font-size: 13px;
+	line-height: 1.45em;
+	margin-top: 4px;
+}
+.sidebar-phone strong {
+	font-family: 'OpenSansBold';
+}
+
+/*footer free trial*/
+.footer-freetrial {
+	padding: 45px 0;
+}
+
+.footer-freetrial strong { font-family: 'OpenSansBold'; }
+.footer-freetrial h2 {
+	color: #000;
+	margin-top: 4px;
+	font-size: 1.4em;
+}
+.footer-freetrial .column.first > p.copy {
+	font-size: .9em;
+	line-height: 1.54em;
+	margin-top: .54em;
+}
+.footer-freetrial .column.first > p.orange-text { font-size: 1.1em; }
+
+.footer-freetrial .column.first > ul li { padding-bottom: 7px; }
+
+.footer-freetrial .column.last > form {
+	background: #f5f5f5;
+	padding: 14px;
+	width: 88%;
+	border: 1px solid #eee;
+}
+
+.footer-freetrial .column.last > form .btn {
+	border: none;
+	padding: 11px 21px;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+
+.footer-freetrial .column.last > form input {
+	padding: 16px 7px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.footer-freetrial .column.last > form select { width: 370px; }
+
+.footer-freetrial .column.last > form input, .footer-freetrial .column.last > form .select-area {
+	background: #fff;
+	width: 100%;
+}
+
+.footer-freetrial .trial-form { margin: 0; }
+
+
 /* ==========================================================================
 Buttons
 ========================================================================== */
@@ -1690,6 +1776,14 @@ Buttons
 /*input buttons*/
 input.button { border: none; box-shadow: none !important; }
 input.button:active { top: 1px; position: relative;  }
+
+.SnapABug_Button, #SnapABug_Button { display: none !important; visibility: hidden !important;}
+
+.fancybox-nicereply .fancybox-inner > iframe {
+	width: 1293px;
+	left: -369px;
+	position: relative;
+}
 
 /* ==========================================================================
 Color Styles
