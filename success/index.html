@@ -89,17 +89,17 @@
 						<h2 class="no-bottom-space">TALK TO US</h2>
 						<ul>
 							<li>
-								<label for="FirstName">First Name</label>
+								<label for="FirstName">First Name <span class="orange-text">*</span></label>
 								<input class="required" type="text" name="FirstName" />
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="LastName">Last Name</label>
+								<label for="LastName">Last Name <span class="orange-text">*</span></label>
 								<input class="required" type="text" name="LastName" />
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="Email">Email Address</label>
+								<label for="Email">Email Address <span class="orange-text">*</span></label>
 								<input class="required" type="email" name="Email" />
 								<div class="clearfix"></div>
 							</li>
@@ -109,7 +109,7 @@
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="Website">Website</label>
+								<label for="Website">Website <span class="orange-text">*</span></label>
 								<input class="required" type="url" value="http://" name="Website" />
 								<div class="clearfix"></div>
 							</li>
@@ -119,7 +119,7 @@
 
 				<div class="column fourty last">
 					<div class="padding">
-						<label for="text" class="textarea">How can we help you?</label>
+						<label for="text" class="textarea">How can we help you? <span class="orange-text">*</span></label>
 						<textarea class="required" name="Contact_Form_Message__c"></textarea>
 						<div class="textright">
 							<input type="submit" class="button orange" value="SEND" />
@@ -280,23 +280,23 @@
 				<input type="hidden" name="formid" value="15" />
 				<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 				<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-				<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/success/" />
+				<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
 
 				<div class="cols">
 					<div class="col">
 						<div class="trial-form custom-form">
-							<label>First Name</label>
-							<input class="text" type="text" name="FirstName" >
-							<label>Last Name</label>
-							<input class="text" type="text" name="LastName" >
-							<label>Email Address</label>
-							<input class="text" type="email" name="Email" >
-							<label>Phone Number</label>
-							<input class="text" type="text" name="Phone" >
-							<label>URL</label>
-							<input class="text" type="text" name="Website" value="http://" data-value="http://" >
-							<label>Your Monthly Bandwidth Usage</label>
-							<select name="NetDNA_Usage_Selection__c" tabindex="6">
+							<label>First Name <span class="orange-text">*</span></label>
+							<input class="text required" type="text" name="FirstName" >
+							<label>Last Name <span class="orange-text">*</span></label>
+							<input class="text required" type="text" name="LastName" >
+							<label>Email Address <span class="orange-text">*</span></label>
+							<input class="text required" type="email" name="Email" >
+							<label>Phone Number <span class="orange-text">*</span></label>
+							<input class="text required" type="text" name="Phone" >
+							<label>URL <span class="orange-text">*</span></label>
+							<input class="text required" type="text" name="Website" value="http://" data-value="http://" >
+							<label>Your Monthly Bandwidth Usage <span class="orange-text">*</span></label>
+							<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
 								<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
 								<option value="Under 5TB">Under 5TB</option>
 								<option value="5TB - 10TB">5TB - 10TB</option>
@@ -318,6 +318,59 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-submit">Request Free Trial</a>
+			</form>
+		</div><!-- /popup -->
+
+		<div class="popup" id="popup-test">
+			<strong class="orange large-heading">Test MaxCDN against your<br/>current solution for free</strong>
+			<p>We will provide you with a third party test ran by Catchpoint; it will measure your current CDN<br/>versus MaxCDN Enterprise from different locations around the world. Once the test is completed, we'll provide a report which shows how they both performed. It can take up to 48</br>hours to send you the report.</p>
+
+			<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
+				<input type="hidden" name="lpId" value="-1" />
+				<input type="hidden" name="subId" value="127" />
+				<input type="hidden" name="kw" value="" />
+				<input type="hidden" name="cr" value="" />
+				<input type="hidden" name="searchstr" value="" />
+				<input type="hidden" name="_mkt_disp" value="return" />
+				<input type="hidden" name="_mkt_trk" value="" />
+				<input name="content__c" type='text' value="" class="hidden" />
+				<input name="LeadSource" type="hidden" value="MaxCDN.com">
+				<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Testing Form">
+				<input type="hidden" name="lpurl" value="http://resources.netdna.com/Testing_MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
+				<input type="hidden" name="formid" value="109" />
+				<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
+				<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
+				<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+
+				<div class="cols">
+					<div class="col">
+						<div class="trial-form custom-form">
+							<label>Email Address <span class="orange-text">*</span></label>
+							<input class="text required" type="email" name="Email" >
+							<label>Phone Number (optional)</label>
+							<input class="text " type="text" name="Phone" >
+							<label>URL of a file (2mb or under) <span class="orange-text">*</span></label>
+							<input class="text required" type="text" name="Website" placeholder="http://your-company.com/file.pdf">
+							<label>Your Monthly Bandwidth Usage <span class="orange-text">*</span></label>
+							<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
+								<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
+								<option value="Under 5TB">Under 5TB</option>
+								<option value="5TB - 10TB">5TB - 10TB</option>
+								<option value="11 - 100TB">11 - 100TB</option>
+								<option value="101TB - 1,000TB">101TB - 1,000TB</option>
+								<option value="1PB+">1PB+</option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<h3>How will this test help you?</h3>
+						<ul class="simple-list">
+							<li><strong>You can save money</strong>! If you're spending $5,000 on CDN now, we'll offer the same performance and reliability for $1,500. (These are example numbers.)</li>
+							<li><strong>You get real data</strong>, from a 3rd party (Catchpoint), to help drive your decisions.</li>
+						</ul>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-submit">Get Your Speed Report</a>
 			</form>
 		</div><!-- /popup -->
 	</div>
@@ -385,6 +438,20 @@
 	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
 	   if(oldonload){oldonload()}};
 	}());
+	</script>
+	
+	<script id="_webengage_script_tag" type="text/javascript">
+	var _weq = _weq || {};
+	_weq['webengage.licenseCode'] = '58add003';
+	_weq['webengage.widgetVersion'] = "4.0";
+	(function(d){
+	var _we = d.createElement('script');
+	_we.type = 'text/javascript';
+	_we.async = true;
+	_we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+	var _sNode = d.getElementById('_webengage_script_tag');
+	_sNode.parentNode.insertBefore(_we, _sNode);
+	})(document);
 	</script>
 
 	<script src="//cdn.optimizely.com/js/140761619.js"></script>

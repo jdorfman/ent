@@ -88,17 +88,17 @@
 						<h2 class="no-bottom-space">TALK TO US</h2>
 						<ul>
 							<li>
-								<label for="FirstName">First Name</label>
+								<label for="FirstName">First Name <span class="orange-text">*</span></label>
 								<input class="required" type="text" name="FirstName" />
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="LastName">Last Name</label>
+								<label for="LastName">Last Name <span class="orange-text">*</span></label>
 								<input class="required" type="text" name="LastName" />
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="Email">Email Address</label>
+								<label for="Email">Email Address <span class="orange-text">*</span></label>
 								<input class="required" type="email" name="Email" />
 								<div class="clearfix"></div>
 							</li>
@@ -108,7 +108,7 @@
 								<div class="clearfix"></div>
 							</li>
 							<li>
-								<label for="Website">Website</label>
+								<label for="Website">Website <span class="orange-text">*</span></label>
 								<input class="required" type="url" value="http://" name="Website" />
 								<div class="clearfix"></div>
 							</li>
@@ -118,7 +118,7 @@
 
 				<div class="column fourty last">
 					<div class="padding">
-						<label for="text" class="textarea">How can we help you?</label>
+						<label for="text" class="textarea">How can we help you? <span class="orange-text">*</span></label>
 						<textarea class="required" name="Contact_Form_Message__c"></textarea>
 						<div class="textright">
 							<input type="submit" class="button orange" value="SEND" />
@@ -150,7 +150,7 @@
 		</header><!-- /header -->
 		<div class="price-block">
 			<h1>One World. One Rate.</h1>
-			<p class="no-bottom-space">Our price? Just one, no matter where in the world. We charge based on bandwidth. We don't charge for requests. We also don't charge additional fees for SSL traffic.</p>
+			<p class="no-bottom-space">Just one, no matter where in the world. We charge based on bandwidth.<br/>We don't charge for requests. We also don't charge additional fees for SSL traffic.</p>
 			
 			<div class="data">
 				<table>
@@ -255,7 +255,13 @@
 			</div>
 			<div class="price-section">
 
-				<p class="textcenter bw-tier-notice"><strong>Important!</strong> You qualify for our below 2&cent; list pricing and may be as low as 1&cent;. On average we save our clients over 1/3 off their current CDN bill by using us as a main CDN provider or adding us on a multi CDN strategy. Try us for 30-days with no commitment.</p>
+				<div class="bw-tier-notice">
+					<p class="textcenter no-margin first"><strong>Important!</strong> You qualify for our below 2&cent; list pricing and may be as low as 1&cent;. On average we save our clients over 1/3 off their current CDN bill by using us as a main CDN provider or adding us on a multi CDN strategy. Try us for 30-days with no commitment.</p>
+					<p class="textcenter no-margin second hidden">
+						<span>Speak with us to get lower pricing</span><br/>
+						<a href="#popup-contact" class="btn fancybox">Ask About Lower Pricing</a>
+					</p>
+				</div>
 
 				<div class="total">
 					<strong class="name">60TB per month</strong>
@@ -321,19 +327,19 @@
 						<p>We can give you a quick answer.</p>
 						<div class="container">
 							<div class="col">
-								<label>First Name</label>
+								<label>First Name <span class="orange-text">*</span></label>
 								<input class="text required" type="text" name="FirstName" >
-								<label>Last Name</label>
+								<label>Last Name <span class="orange-text">*</span></label>
 								<input class="text required" type="text" name="LastName" >
-								<label>Email Address</label>
+								<label>Email Address <span class="orange-text">*</span></label>
 								<input class="text required" type="email" name="Email" >
-								<label>Phone Number</label>
+								<label>Phone Number<span class="orange-text">*</span></label>
 								<input class="text required" type="text" name="Phone" >
-								<label>URL</label>
+								<label>URL <span class="orange-text">*</span></label>
 								<input class="text required" type="text" name="Website" value="http://" data-value="http://" >
 							</div>
 							<div class="col">
-								<label>Message</label>
+								<label>Message <span class="orange-text">*</span></label>
 								<textarea class="required" name="Contact_Form_Message__c" cols="30" rows="10" style="resize:none;"></textarea>
 								<button class="btn btn-submit" type="submit">Contact Us</button>
 							</div>
@@ -369,17 +375,17 @@
 						<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
 						<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/pricing/" />
 
-						<label>First Name</label>
+						<label>First Name <span class="orange-text">*</span></label>
 						<input class="text required" type="text" name="FirstName" >
-						<label>Last Name</label>
+						<label>Last Name <span class="orange-text">*</span></label>
 						<input class="text required" type="text" name="LastName" >
-						<label>Email Address</label>
+						<label>Email Address <span class="orange-text">*</span></label>
 						<input class="text required" type="email" name="Email" >
-						<label>Phone Number</label>
+						<label>Phone Number <span class="orange-text">*</span></label>
 						<input class="text required" type="text" name="Phone" >
-						<label>URL</label>
+						<label>URL <span class="orange-text">*</span></label>
 						<input class="text required" type="text" name="Website" value="http://" data-value="http://" >
-						<label>Your Monthly Bandwidth Usage</label>
+						<label>Your Monthly Bandwidth Usage <span class="orange-text">*</span></label>
 						<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
 							<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
 							<option value="Under 5TB">Under 5TB</option>
@@ -536,17 +542,17 @@
 				<div class="cols">
 					<div class="col">
 						<div class="trial-form custom-form">
-							<label>First Name</label>
+							<label>First Name <span class="orange-text">*</span></label>
 							<input class="text required" type="text" name="FirstName" >
-							<label>Last Name</label>
+							<label>Last Name <span class="orange-text">*</span></label>
 							<input class="text required" type="text" name="LastName" >
-							<label>Email Address</label>
+							<label>Email Address <span class="orange-text">*</span></label>
 							<input class="text required" type="email" name="Email" >
-							<label>Phone Number</label>
+							<label>Phone Number <span class="orange-text">*</span></label>
 							<input class="text required" type="text" name="Phone" >
-							<label>URL</label>
+							<label>URL <span class="orange-text">*</span></label>
 							<input class="text required" type="text" name="Website" value="http://" data-value="http://" >
-							<label>Your Monthly Bandwidth Usage</label>
+							<label>Your Monthly Bandwidth Usage <span class="orange-text">*</span></label>
 							<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
 								<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
 								<option value="Under 5TB">Under 5TB</option>
@@ -636,6 +642,20 @@
 	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
 	   if(oldonload){oldonload()}};
 	}());
+	</script>
+
+	<script id="_webengage_script_tag" type="text/javascript">
+	var _weq = _weq || {};
+	_weq['webengage.licenseCode'] = '58add003';
+	_weq['webengage.widgetVersion'] = "4.0";
+	(function(d){
+	var _we = d.createElement('script');
+	_we.type = 'text/javascript';
+	_we.async = true;
+	_we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+	var _sNode = d.getElementById('_webengage_script_tag');
+	_sNode.parentNode.insertBefore(_we, _sNode);
+	})(document);
 	</script>
 
 	<script src="//cdn.optimizely.com/js/140761619.js"></script>

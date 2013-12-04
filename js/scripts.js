@@ -82,12 +82,13 @@ function calculateBandwidthPrice(usage) {
 	}
 
 	// final bw price
-	var finalPrice = bwPrice * (usage * 1024) * 1.1;
+	// var finalPrice = bwPrice * (usage * 1024) * 1.1;
+	var finalPrice = bwPrice;
 
 	// if bw cost is less than 800, make it 800
-	if (finalPrice < 800) {
-		finalPrice = 800;
-	}
+	// if (finalPrice < 800) {
+	// 	finalPrice = 800;
+	// }
 
 	return finalPrice;
 }
@@ -398,7 +399,7 @@ $(document).ready(function(){
 			if (!isNaN(enteredTB) && enteredTB !== "") {
 				var priceSection = $(this).closest('.price-form').next('.price-section');
 				priceSection.slideDown();
-				$('div.total .value', priceSection).html("$" + calculateBandwidthPrice(enteredTB).formatMoney(2));
+				$('div.total .value', priceSection).html(Math.round(calculateBandwidthPrice(enteredTB).formatMoney(4) * 1000  * 10) / 10 + "&cent; per GB");
 				$('div.total .name', priceSection).html(numberWithCommas(enteredTB) + "TB");
 
 				// check to see if we need to show the special message
