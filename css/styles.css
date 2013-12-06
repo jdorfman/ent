@@ -318,7 +318,6 @@ nav a {color:#22221e;}
 .test-form {
 	text-align:center;
 	color:#000026;
-	text-transform:uppercase;
 	font-size:13px;
 	line-height:16px;
 }
@@ -478,7 +477,7 @@ nav a {color:#22221e;}
 	padding:0;
 	border:0;
 	cursor:pointer;
-	background:#8D8D8D;
+	background:#27ae00;
 	width:100%;
 	height:30px;
 	color:#fff;
@@ -487,28 +486,8 @@ nav a {color:#22221e;}
 	text-align:center;
 	box-shadow: inset 0 0 0 1px #fff;
 }
-.btn-chat:hover {background:#979797; text-decoration:none;}
-.btn-chat:active {background:#A3A2A2;}
-
-.btn-speedreport {
-	display:block;
-	margin:0 auto;
-	padding:0;
-	border:0;
-	cursor:pointer;
-	background:#ff7012;
-	width:100%;
-	height:30px;
-	color:#fff;
-	text-transform:uppercase;
-	font:13px/30px 'OpenSansBold';
-	text-align:center;
-	box-shadow: inset 0 0 0 1px #fff;
-	margin-bottom: 4px;
-}
-.btn-speedreport:hover {background:#ff9300;text-decoration:none;}
-.btn-speedreport:active {background:#ffbc00;}
-.btn-speedreport.inactive {background:#33332f !important;}
+.btn-chat:hover {background:#00C223; text-decoration:none;}
+.btn-chat:active {background:#00B120;}
 
 /* testimonial */
 .testimonial {
@@ -799,11 +778,21 @@ nav a {color:#22221e;}
 	color:#7d7d7a;
 }
 .data table {
-	width:100%;
+	width:500px;
 	border-collapse:collapse;
 	text-align:left;
 	position:relative;
 	z-index:20;
+	margin: 0 auto;
+}
+span.decor-topheader {
+	width: 500px;
+	height: 130px;
+	background: transparent;
+	box-shadow: 0 0 94px -5px rgba(255, 245, 0, 1);
+	position: absolute;
+	left: 609px;
+	top: 37px;
 }
 .data td,
 .data th {
@@ -821,38 +810,26 @@ nav a {color:#22221e;}
 	font-family:'OpenSansBold';
 	color:#21211d;
 }
-.data thead th:first-child {
-	font-family:'OpenSansItalic';
+.data thead th {
 	background:none;
+	text-align: center;
 }
 .data tbody th {
 	color:#fff;
-	background:#ff7e2a;
+	background:#ff7e29;
 	font-weight:normal;
 }
-.data tbody td {font-family:'OpenSansBold';}
-.data .odd th {background:#ff7012;}
+.data tbody td {
+	text-align: center;
+	color: #666662;
+}
+.data tbody td a {
+	color: #666662;
+	text-decoration: underline;
+}
+.data tbody td strong { font-family:'OpenSansBold'; }
+.data .odd th {background:#ff6f12;}
 .data .odd td {background:#f4f4f1;}
-.data .decor-r,
-.data .decor-b {
-	text-indent:-9999px;
-	overflow:hidden;
-	text-align:left;
-	position:absolute;
-	right:0;
-	bottom:0;
-	-webkit-box-shadow:0 0 8px 0 #d9d9d9;
-	   -moz-box-shadow:0 0 8px 0 #d9d9d9;
-	        box-shadow:0 0 8px 0 #d9d9d9;
-}
-.data .decor-r {
-	top:0;
-	left:210px;
-}
-.data .decor-b {
-	left:0;
-	top:37px;
-}
 /* img-block */
 .img-block {padding:12px 0 43px;}
 .img-block img {vertical-align:top;}
@@ -861,7 +838,6 @@ nav a {color:#22221e;}
 .price-block {
 	margin:0 auto;
 	padding:38px 100px 0;
-	width:680px;
 	text-align:center;
 	background:url(../images/bg-price-block.png) no-repeat 50% 25px;
 	min-height:297px;
@@ -869,6 +845,10 @@ nav a {color:#22221e;}
 .price-block h1 {
 	font:64px/67px 'OpenSansLight';
 	margin:0 0 4px;
+}
+.price-block p {
+	color: #000;
+	font-size: 1.3em;
 }
 .price-block .data {
 	margin-bottom:0;
@@ -881,7 +861,11 @@ nav a {color:#22221e;}
 	padding:14px 0 0;
 	text-align:center;
 }
-.info p {margin-bottom:30px;}
+.info p {margin-bottom:30px; }
+section.info.small  {
+	font-size:.82em;
+	margin-top: 29px;
+}
 .ask-form {
 	text-align:left;
 	margin:0 -73px 0 0;
@@ -1150,8 +1134,7 @@ nav a {color:#22221e;}
 	clear:both;
 	width:100%;
 	padding:0 0 3px;
-	text-transform:uppercase;
-	font-size:11px;
+	font-size:13px;
 	line-height:14px;
 }
 .trial-form .text,
@@ -1190,6 +1173,11 @@ nav a {color:#22221e;}
 	clear:both;
 	margin:0 0 13px;
 }
+.popup .trial-form .select-area,
+.popup .feedback-form .select-area {
+	background: #fff;
+	border: 1px solid #cdcdc7;
+}
 .feedback-form .text,
 .feedback-form textarea {width:324px;}
 .feedback-form select,
@@ -1208,6 +1196,9 @@ nav a {color:#22221e;}
 .simple-list li {
 	padding:0 0 10px 24px;
 	background:url(../images/bul-01.png) no-repeat 0 8px;
+}
+.simple-list.green li {
+	background:url(../images/bul-02.png) no-repeat 0 15px;
 }
 .simple-list li strong {
 	font-family: "OpenSansBold";
@@ -1359,7 +1350,11 @@ footer .socials .ico-3 {background-position:-100px 0;}
 	padding:0 24px;
 }
 .popup .trial-form .text,
-.popup .trial-form textarea {width:294px;}
+.popup .trial-form textarea {
+	width:294px;
+	border: 1px solid #cdcdc7;
+	background: #fff;
+}
 .popup .trial-form select,
 .popup .trial-form .select-area {width:312px !important;}
 .popup h3 {
@@ -1563,6 +1558,24 @@ html.mobile-device .orange-slider, html.no-csstransforms .orange-slider, html.lt
 	border: 1px solid #E9E9E9;
 	margin-bottom: 28px;
 	display: none;
+	transition: all 0.5s ease;
+}
+.price-section .bw-tier-notice p { height: 72px; }
+.price-section .bw-tier-notice:hover {
+	background: #e4e4de;
+}
+.price-section .bw-tier-notice:hover p.first { display: none; }
+.price-section .bw-tier-notice:hover p.second {
+	display: block;
+}
+.price-section .bw-tier-notice:hover p.second span {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.price-section .bw-tier-notice:hover p.second a {
+	font-size: 1.2em;
+	margin-top: 10px;
+	padding: 6px 16px;
 }
 
 /* ==========================================================================
@@ -1692,7 +1705,10 @@ Forms for slider
 .sidebar-phone {
 	font-size: 13px;
 	line-height: 1.45em;
-	margin-top: 4px;
+	background: #fff;
+	padding: 4px;
+	border: 2px solid #f3f3f0;
+	border-top: 0;
 }
 .sidebar-phone strong {
 	font-family: 'OpenSansBold';
@@ -1751,7 +1767,6 @@ Forms for slider
 
 .footer-freetrial .trial-form { margin: 0; }
 
-
 /* ==========================================================================
 Buttons
 ========================================================================== */
@@ -1789,7 +1804,7 @@ input.button:active { top: 1px; position: relative;  }
 Color Styles
 ========================================================================== */
 /*text*/
-.orange-text { color: #FF6F11; }
+.orange-text { color: #ff4c0a; }
 .grey-text { color: #CCC; }
 
 /* ==========================================================================
