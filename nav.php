@@ -13,8 +13,8 @@
 					?>
 					<li class="<?php echo $homeActive; ?>"><a href="/">HOME</a></li>
 					<li class="<?php echo $pricingActive; ?>"><a href="/pricing/">PRICING</a></li>
-					<li><a href="/pricing/#calc">CALCULATOR</a></li>
-					<li><a href="#popup-contact" class="fancybox">FREE TRIAL</a></li>
+					<li><a id="topnavcalc" href="/pricing/#calc">CALCULATOR</a></li>
+					<li><a id="topnavtrial" href="#popup-contact" class="fancybox">FREE TRIAL</a></li>
 				</ul>
 			</nav>
 			<a href="#popup-contact" class="fancybox"><strong class="phone"><span class="replace-number">+1 (877) 629-2361</span></strong></a>

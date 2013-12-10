@@ -149,7 +149,7 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 						<label for="text" class="textarea">How can we help you? <span class="orange-text">*</span></label>
 						<textarea class="required" name="Contact_Form_Message__c"></textarea>
 						<div class="textright">
-							<input type="submit" class="button orange" value="SEND" />
+							<input id="talkformsend" type="submit" class="button orange" value="SEND" />
 						</div>
 					</div>
 				</div>

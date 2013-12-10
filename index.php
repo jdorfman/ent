@@ -9,7 +9,7 @@
 			<div class="tbl-in">
 				<strong class="ttl">Enterprise-Level Service &mdash; Without the Cost.</strong>
 				<p>Why are more companies switching to us? We offer the same reliability and performance at a third of the price.</p>
-				<a href="#popup-test" class="fancybox btn btn-test">Test our performance</a>
+				<a id="mainbtntestperf" href="#popup-test" class="fancybox btn btn-test">Test our performance</a>
 			</div>
 		</div>
 	</div><!-- /block -->
@@ -47,14 +47,14 @@
 		</article>
 		<aside id="sidebar">
 			<ul class="side-menu">
-				<li><a href="#reliability">RELIABILITY<span class="ico ico-2">&nbsp;</span></a></li>
-				<li><a href="#performance">PERFORMANCE<span class="ico">&nbsp;</span></a></li>
-				<li><a href="#features">FEATURES<span class="ico ico-3">&nbsp;</span></a></li>
-				<li><a href="#security">SECURITY<span class="ico ico-4">&nbsp;</span></a></li>
-				<li><a href="#support">SUPPORT<span class="ico ico-5">&nbsp;</span></a></li>
-				<li><a href="#pricing">PRICING<span class="ico ico-6">&nbsp;</span></a></li>
+				<li><a id="scrollerreliability" href="#reliability">RELIABILITY<span class="ico ico-2">&nbsp;</span></a></li>
+				<li><a id="scrollerperformance" href="#performance">PERFORMANCE<span class="ico">&nbsp;</span></a></li>
+				<li><a id="scrollerfeatures" href="#features">FEATURES<span class="ico ico-3">&nbsp;</span></a></li>
+				<li><a id="scrollersecurity" href="#security">SECURITY<span class="ico ico-4">&nbsp;</span></a></li>
+				<li><a id="scrollersupport" href="#support">SUPPORT<span class="ico ico-5">&nbsp;</span></a></li>
+				<li><a id="scrollerpricing" href="#pricing">PRICING<span class="ico ico-6">&nbsp;</span></a></li>
 			</ul>
-			<a href="#" class="btn-chat" onclick="return startWidget('chat');">chat online</a>
+			<a id="scrollerchatonline" href="#" class="btn-chat" onclick="return startWidget('chat');">chat online</a>
 			<p class="sidebar-phone textcenter"><strong>or give us a call at:<br/></strong><span class="phone-number">+1 (877) 629-2361</span>
 		</aside>
 	</div><!-- /main-holder -->
@@ -76,8 +76,8 @@
 		</div><!-- /perfomance-info -->
 		<div class="tab-area" id="tabs-1">
 			<ul class="tabset">
-				<li><a href="#tab-1-1" class="ie-fix">Network Map</a></li>
-				<li><a href="#tab-1-2" class="ie-fix">Peering Partners</a></li>
+				<li><a id="networktab" href="#tab-1-1" class="ie-fix">Network Map</a></li>
+				<li><a id="peeringtab" href="#tab-1-2" class="ie-fix">Peering Partners</a></li>
 			</ul>
 			<div class="tab-content" id="tab-1-1">
 				<div class="img">
@@ -147,8 +147,8 @@
 				<strong class="name">Instant Purge</strong>
 				<p>Traditional CDNs find it acceptable to purge your cache in half an hour&mdash; we don't. Your cache will be purged in 30 seconds or less with us.</p>
 			</div>
-			<a href="#" class="btn-next">prev</a>
-			<a href="#" class="btn-prev">next</a>
+			<a id="carouselprev" href="#" class="btn-next">prev</a>
+			<a id="carouselnext" href="#" class="btn-prev">next</a>
 		</div>
 	</div>
 </div><!-- /carousel -->
@@ -277,7 +277,7 @@
 							<option value="1PB+">1PB+</option>
 						</select>
 					</div>
-					<button type="submit" class="btn btn-submit">Request Free Trial</a>
+					<button id="bootomtrial" type="submit" class="btn btn-submit">Request Free Trial</a>
 				</form>
 				<div class="clearfix"></div>
 			</div>
