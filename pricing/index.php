@@ -34,7 +34,7 @@
 			<input type="hidden" name="formid" value="110" />
 			<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 			<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-			<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/pricing/" />
+			<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 			<h2 class="orange">Meet Ameer</h2>
 			<label>Ameer is a senior account executive at MaxCDN. He'll help you find out if MaxCDN Enterprise is a good fit for your company.</label>
@@ -69,11 +69,19 @@
 		</div>
 		<div class="price-section">
 
-			<div class="bw-tier-notice">
-				<p class="textcenter no-margin first"><strong>Important!</strong> You qualify for our below 2&cent; list pricing and may be as low as 1&cent;. On average we save our clients over 1/3 off their current CDN bill by using us as a main CDN provider or adding us on a multi CDN strategy. Try us for 30-days with no commitment.</p>
+			<div class="bw-tier-notice under3pb">
+				<p class="textcenter no-margin first"><strong>Important!</strong> You qualify for our below 2&cent; list pricing. On average we save our clients over 1/3 off their current CDN bill by using us as a main CDN provider or adding us on a multi-CDN strategy. Try us for 30-days with no commitment.</p>
 				<p class="textcenter no-margin second hidden">
-					<span>Speak with us to get lower pricing</span><br/>
-					<a href="#popup-contact" class="btn fancybox">Ask About Lower Pricing</a>
+					<span>Speak with us to get this lower pricing.</span><br/>
+					<a href="#popup-contact" class="btn fancybox">Ask About This Lower Pricing</a>
+				</p>
+			</div>
+
+			<div class="bw-tier-notice over3pb">
+				<p class="textcenter no-margin first"><strong>Important!</strong> You qualify for our below 2&cent; list pricing and may be as low as 0.8&cent;. On average we save our clients over 1/3 off their current CDN bill by using us as a main CDN provider or adding us on a multi-CDN strategy. Try us for 30-days with no commitment.</p>
+				<p class="textcenter no-margin second hidden">
+					<span>Speak with us to get this lower pricing.</span><br/>
+					<a href="#popup-contact" class="btn fancybox">Ask About This Lower Pricing</a>
 				</p>
 			</div>
 
@@ -127,7 +135,7 @@
 					<input type="hidden" name="formid" value="112" />
 					<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 					<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-					<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/pricing/" />
+					<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 					<select type='hidden' id="bandwidth-pricing-hidden" name="NetDNA_Usage_Selection__c" tabindex="6">
 						<option data-range="none" value="Select Bandwidth" selected="selected">Select Bandwidth</option>
 						<option data-range="0-4" value="Under 5TB">Under 5TB</option>
@@ -182,12 +190,12 @@
 					<input type="hidden" name="_mkt_trk" value="" />
 					<input name="content__c" type='text' value="" class="hidden" />
 					<input name="LeadSource" type="hidden" value="MaxCDN.com">
-					<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Contact Us Form">
-					<input type="hidden" name="lpurl" value="http://resources.netdna.com/MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
-					<input type="hidden" name="formid" value="15" />
+					<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Enterprise Free Trial Form">
+					<input type="hidden" name="lpurl" value="http://resources.netdna.com/EnterpriseMaxCDNFreeTrial_freetrial.html?cr={creative}&kw={keyword}" />
+					<input type="hidden" name="formid" value="111" />
 					<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 					<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-					<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/pricing/" />
+					<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 					<label>First Name <span class="orange-text">*</span></label>
 					<input class="text required" type="text" name="FirstName" >

@@ -1,3 +1,5 @@
+<?php include('functions.php'); ?>
+
 <?php
 $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 ?>
@@ -20,8 +22,9 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 			break;
 	}
 
+
 	// don't index these pages
-	if ($_SERVER['SCRIPT_NAME'] === '/success/index.php') {
+	if ($_SERVER['SCRIPT_NAME'] === '/success/index.php' || $_SERVER['SCRIPT_NAME'] === 'high-volume-cdn.php') {
 		echo '<meta name="robots" content="noindex,nofollow" />';
 	}
 	?>
@@ -109,7 +112,7 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 				<input type="hidden" name="formid" value="113" />
 				<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 				<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-				<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+				<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 				<div class="column sixty">
 					<div class="padding">

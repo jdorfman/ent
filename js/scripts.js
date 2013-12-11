@@ -22,11 +22,21 @@ var bandwidthTiers = [
 	},
 	{
 		'start': 351,
-		'end': 1024,
+		'end': 1023,
 		'price': .030
 	},
 	{
 		'start': 1024,
+		'end': 3071,
+		'price': .020
+	},
+	{
+		'start': 3072,
+		'end': 5120,
+		'price': .020
+	},
+	{
+		'start': 5121,
 		'end': NaN,
 		'price': .020
 	},
@@ -64,22 +74,22 @@ function calculateBandwidthPrice(usage) {
 
 	// check what value to return
 	var bwPrice = 0.0;
-	if (nextTier == null || firstTier.start == usage) {
+	// if (nextTier == null || firstTier.start == usage) {
 		// there's no tier next up, so just use the first tier price
 		bwPrice = firstTier.price;
-	} else {
-		// there is a tier above it, so calclaute the bw price based on the two tiers
+	// } else {
+	// 	// there is a tier above it, so calclaute the bw price based on the two tiers
 
-		// get the percentage of how in between the bandwidth amount is between the two tiers
-		var percentInBetween = (usage - firstTier.start) / (nextTier.start - firstTier.start);
+	// 	// get the percentage of how in between the bandwidth amount is between the two tiers
+	// 	var percentInBetween = (usage - firstTier.start) / (nextTier.start - firstTier.start);
 
-		// see how much we need to add to the price to give them discounts
-		var priceAddition = (firstTier.price - nextTier.price) * percentInBetween;
+	// 	// see how much we need to add to the price to give them discounts
+	// 	var priceAddition = (firstTier.price - nextTier.price) * percentInBetween;
 
 
-		// give them their final bw price
-		bwPrice = firstTier.price - priceAddition;
-	}
+	// 	// give them their final bw price
+	// 	bwPrice = firstTier.price - priceAddition;
+	// }
 
 	// final bw price
 	// var finalPrice = bwPrice * (usage * 1024) * 1.1;
@@ -371,10 +381,14 @@ $(document).ready(function(){
 	}
 	
 	if ($('.fancybox').exists()) {
-		$('.fancybox').fancybox({
-			'padding': 0,
-			'margin':10,
-			'width': 800
+		$('.fancybox').each(function(){
+			var width = ($(this).hasClass('small-box')) ? 300 : 400;
+			console.log(width);
+			$(this).fancybox({
+				'padding': 0,
+				'margin':10,
+				'width': width
+			});
 		});
 	}
 	
@@ -399,16 +413,19 @@ $(document).ready(function(){
 			if (!isNaN(enteredTB) && enteredTB !== "") {
 				var priceSection = $(this).closest('.price-form').next('.price-section');
 				priceSection.slideDown();
-				$('div.total .value', priceSection).html(Math.round(calculateBandwidthPrice(enteredTB).formatMoney(4) * 1000  * 10) / 10 + "&cent; per GB");
+				$('div.total .value', priceSection).html(Math.round(calculateBandwidthPrice(enteredTB).formatMoney(4) * 100  * 10) / 10 + "&cent; per GB");
 				$('div.total .name', priceSection).html(numberWithCommas(enteredTB) + "TB");
 
 				// check to see if we need to show the special message
-				if (enteredTB > 1000) {
+				$('.price-section .bw-tier-notice').hide();
+				if (enteredTB >= 3000) {
 					$('div.total .value', priceSection).addClass('strikethrough');
-					$('.price-section .bw-tier-notice').fadeIn(1454);
+					$('.price-section .bw-tier-notice.over3pb').fadeIn(1454);
+				} else if (enteredTB >= 1000 && enteredTB < 3000) {
+					$('div.total .value', priceSection).removeClass('strikethrough');
+					$('.price-section .bw-tier-notice.under3pb').fadeIn(1454);
 				} else {
 					$('div.total .value', priceSection).removeClass('strikethrough');
-					$('.price-section .bw-tier-notice').hide();
 				}
 
 				// fill in the bandwidth field in the form below

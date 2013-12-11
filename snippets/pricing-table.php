@@ -19,7 +19,7 @@
 			<td><strong>3.5&cent;</strong> / GB</td>
 		</tr>
 		<tr>
-			<th>351 - 1024 TB/Month</th>
+			<th>351 - 1023 TB/Month</th>
 			<td><strong>3&cent;</strong> / GB</td>
 		</tr>
 		<tr>
@@ -28,11 +28,11 @@
 		</tr>
 		<tr>
 			<th>3-5 PB/Month</th>
-			<td><strong>2&cent;</strong> / GB</td>
+			<td><strong>From 2&cent; to 0.8&cent;</strong> / GB</td>
 		</tr>
 		<tr>
-			<th>Over 10 PB/Month</th>
-			<td><strong><a href="#popup-contact" class="fancybox">Contact Us</a></td>
+			<th>Over 5 PB/Month</th>
+			<td><strong><a href="#popup-generalcontact" class="fancybox small-box">Contact Us</a></td>
 		</tr>
 	</tbody>
 </table>

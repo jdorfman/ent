@@ -1089,6 +1089,7 @@ section.info.small  {
 	position:relative;
 	top:6px;
 }
+
 /* trial-info */
 .trial-info {
 	margin:0 auto 60px;
@@ -1186,6 +1187,15 @@ section.info.small  {
 .feedback-form textarea,
 .feedback-form select,
 .feedback-form .select-area {margin-bottom:10px;}
+
+/*contact form*/
+.generalcontact-form {
+margin: 0 auto 20px auto;
+width: 320px;
+}
+
+
+
 /* simple-list */
 .simple-list {
 	list-style:none;
@@ -1338,6 +1348,11 @@ footer .socials .ico-3 {background-position:-100px 0;}
 	overflow:hidden;
 	display:none;
 }
+.popup#popup-generalcontact {
+	width:auto;
+
+}
+
 .popup .cols {
 	text-align:left;
 	overflow:hidden;

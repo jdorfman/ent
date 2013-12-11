@@ -102,7 +102,7 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 			<input type="hidden" name="formid" value="111" />
 			<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 			<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-			<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+			<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 			<div class="cols">
 				<div class="col">
@@ -162,7 +162,7 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 			<input type="hidden" name="formid" value="111" />
 			<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 			<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-			<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+			<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 			<div class="cols">
 				<div class="col">
@@ -193,6 +193,51 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 				</div>
 			</div>
 			<button type="submit" class="btn btn-submit">Get Your Speed Report</a>
+		</form>
+	</div><!-- /popup -->
+
+	<div class="popup" id="popup-generalcontact">
+		<strong class="orange large-heading">Contact Us</strong>
+		<p>If you have any technical or pricing questions about MaxCDN Enterprise, we can answer them.<br/>If you leave your details below, we'll contact you back with more information.<br/>Otherwise, you can <a href="#" onclick="return startWidget('chat');">live chat</a> us or call us at <span class="phone-number">(877) 629-2361</span>.</p>
+
+		<form method="post" enctype="application/x-www-form-urlencoded" action="http://resources.netdna.com/index.php/leadCapture/save">
+			<input type="hidden" name="lpId" value="-1" />
+			<input type="hidden" name="subId" value="127" />
+			<input type="hidden" name="kw" value="" />
+			<input type="hidden" name="cr" value="" />
+			<input type="hidden" name="searchstr" value="" />
+			<input type="hidden" name="_mkt_disp" value="return" />
+			<input type="hidden" name="_mkt_trk" value="" />
+			<input name="content__c" type='text' value="" class="hidden" />
+			<input name="LeadSource" type="hidden" value="MaxCDN.com">
+			<input name="Lead_Source_Detail__c" type="hidden" value="MaxCDN Enterprise Contact Form">
+			<input type="hidden" name="lpurl" value="http://resources.netdna.com/EnterpriseMaxCDNContactForm_EnterpriseMaxCDN_MaxCDNContactUs.html?cr={creative}&kw={keyword}" />
+			<input type="hidden" name="formid" value="114" />
+			<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
+			<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
+			<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
+
+			<div class="cols">
+				<div class="trial-form generalcontact-form custom-form">
+					<label>Email Address <span class="orange-text">*</span></label>
+					<input class="text required" type="email" name="Email" >
+					<label>Phone Number (optional)</label>
+					<input class="text " type="text" name="Phone" >
+					<label>Your Website <span class="orange-text">*</span></label>
+					<input class="text required" type="text" name="Website" placeholder="http://your-company.com">
+					<label>Your Monthly Bandwidth Usage <span class="orange-text">*</span></label>
+					<select class="required" name="NetDNA_Usage_Selection__c" tabindex="6">
+						<option value="Select Bandwidth" selected="selected">Select Bandwidth</option>
+						<option value="Under 5TB">Under 5TB</option>
+						<option value="5TB - 10TB">5TB - 10TB</option>
+						<option value="11 - 100TB">11 - 100TB</option>
+						<option value="101TB - 1,000TB">101TB - 1,000TB</option>
+						<option value="1PB+">1PB+</option>
+					</select>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-submit">Submit</a>
 		</form>
 	</div><!-- /popup -->
 </div>
@@ -286,6 +331,17 @@ _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com"
 var _sNode = d.getElementById('_webengage_script_tag');
 _sNode.parentNode.insertBefore(_we, _sNode);
 })(document);
+</script>
+
+<!-- PPC code -->
+<script type="text/javascript">
+	var _roiq=[];var _gaq={push:function(){var a;for(a=0;a<arguments.length;a++){_roiq.push(arguments[a])}}};var _gat={trackingObjects:{},_createTracker:function(a,b){return new _gat.Tracker(a,b)},_getTracker:function(a){return _gat._createTracker(a)},_getTrackerByName:function(a){var a=a||"";if(_gat.trackingObjects.hasOwnProperty(a)){return _gat.trackingObjects[a]}return _gat._createTracker("UA-XXXXX-X",a)},_anonymizeIp:function(){_gaq.push("_gat._anonymizeIp")},_forceSSL:function(){_gaq.push("_gat._forceSSL")},_getPlugin:function(){_gaq.push("_gat._getPlugin")},Tracker:function(a,g){var c,h,e=["_addDevId","_addEventListener","_addIgnoredOrganic","_addIgnoredRef","_addItem","_addOrganic","_addTrans","_clearIgnoredOrganic","_clearIgnoredRef","_clearOrganic","_clearTrans","_clearXKey","_clearXValue","_cookiePathCopy","_createEventTracker","_createXObj","_deleteCustomVar","_get","_getAccount","_getClientInfo","_getDetectFlash","_getDetectTitle","_getLinkerUrl","_getLocalGifPath","_getName","_getPlugin","_getServiceMode","_getVersion","_getVisitorCustomVar","_getXKey","_getXValue","_initData","_link","_linkByPost","_removeEventListener","_sendXEvent","_set","_setAccount","_setAllowAnchor","_setAllowHash","_setAllowLinker","_setAutoTrackOutbound","_setCampCIdKey","_setCampContentKey","_setCampIdKey","_setCampMediumKey","_setCampNOKey","_setCampNameKey","_setCampSourceKey","_setCampTermKey","_setCampaignCookieTimeout","_setCampaignTrack","_setClientInfo","_setCookiePath","_setCookiePersistence","_setCookieTimeout","_setCustomVar","_setDetectFlash","_setDetectTitle","_setDomainName","_setHrefExamineLimit","_setLocalGifPath","_setLocalRemoteServerMode","_setLocalServerMode","_setMaxCustomVariables","_setNamespace","_setPageGroup","_setReferrerOverride","_setRemoteServerMode","_setSampleRate","_setSessionCookieTimeout","_setSessionTimeout","_setSiteSpeedSampleRate","_setTrackOutboundSubdomains","_setTrans","_setTransactionDelim","_setVar","_setVisitorCookieTimeout","_setXKey","_setXValue","_trackEvent","_trackPageLoadTime","_trackPageview","_trackSocial","_trackTiming","_trackTrans","_visitCode"];var b=g||"";var f=a||"UA-XXXXX-X";for(c=0;c<e.length;c++){h=e[c];this[h]=d(h)}function d(i){return function(){if(b){i=b+"."+i}var j=Array.prototype.slice.call(arguments,0);j.unshift(i);_roiq.push(j)}}_gat.trackingObjects[b]=this}};
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://03691fa0ab943e0c2c22-5e29631a3e7a95f0b191462b1b9d0d79.ssl.cf2.rackcdn.com/gascript.js' : 'http://37fabcac6ba15e1f68ed-5e29631a3e7a95f0b191462b1b9d0d79.r61.cf2.rackcdn.com/gascript.js');
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
 </script>
 
 <?php if ($_SERVER['SCRIPT_NAME'] === '/success/index.php'): ?>

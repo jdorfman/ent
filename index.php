@@ -258,7 +258,7 @@
 					<input type="hidden" name="formid" value="111" />
 					<input type="hidden" name="returnURL" value="https://enterprise.maxcdn.com/success/" />
 					<input type="hidden" name="retURL" value="https://enterprise.maxcdn.com/success/" />
-					<input name="URL_of_Lead_Source__c" type='hidden' value="https://enterprise.maxcdn.com/" />
+					<input name="URL_of_Lead_Source__c" type='hidden' value="<?php echo getURL(); ?>" />
 
 					<div class="trial-form custom-form">
 						<label>Email Address <span class="orange-text">*</span></label>

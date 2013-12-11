@@ -1,4 +1,4 @@
-<?php include('../header.php'); ?>
+<?php include_once('../header.php'); ?>
 
 <div class="top-area" style="margin-bottom: 0;">
 	<?php include('../nav.php'); ?>
