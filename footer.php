@@ -7,50 +7,51 @@ $filePrepender = (substr_count($_SERVER['SCRIPT_NAME'], '/') > 1) ? "../" : "";
 		<div class="col">
 			<h3 class="orange">Products</h3>
 			<ul class="list">
-				<li><a href="http://www.maxcdn.com/solutions/">Overview</a></li>
-				<li><a href="http://www.maxcdn.com/products/edgecaching/">EdgeCaching</a></li>
-				<li><a href="http://www.maxcdn.com/products/edgerules/">EdgeRules</a></li>
-				<li><a href="http://www.maxcdn.com/products/edgessl/">EdgeSSL</a></li>
-				<li><a href="http://www.maxcdn.com/products/edgesecurity/">EdgeSecurity</a></li>
+				<li><a id="footeroverview" href="http://www.maxcdn.com/solutions/">Overview</a></li>
+				<li><a id="footercaching" href="http://www.maxcdn.com/products/edgecaching/">EdgeCaching</a></li>
+				<li><a id="footerrules" href="http://www.maxcdn.com/products/edgerules/">EdgeRules</a></li>
+				<li><a id="footerssl" href="http://www.maxcdn.com/products/edgessl/">EdgeSSL</a></li>
+				<li><a id="footersecure" href="http://www.maxcdn.com/products/edgesecurity/">EdgeSecurity</a></li>
 			</ul>
 
 			<h3 class="orange">Legal</h3>
 			<ul class="list">
-				<li><a href="http://www.maxcdn.com/legal/terms/">Legal Terms</a></li>
-				<li><a href="http://www.maxcdn.com/legal/privacy/">Privacy Policy</a></li>
-				<li><a href="http://www.maxcdn.com/legal/dmca/">DMCA	</a></li>
-				<li><a href="http://www.maxcdn.com/legal/aup/">AUP</a></li>
+				<li><a id="footerterms" href="http://www.maxcdn.com/legal/terms/">Legal Terms</a></li>
+				<li><a id="footerpolicy" href="http://www.maxcdn.com/legal/privacy/">Privacy Policy</a></li>
+				<li><a id="footerdmca" href="http://www.maxcdn.com/legal/dmca/">DMCA	</a></li>
+				<li><a id="footeraup" href="http://www.maxcdn.com/legal/aup/">AUP</a></li>
 			</ul>
 		</div>
 		<div class="col">
 			<h3 class="orange">SOLUTIONS</h3>
 			<ul class="list">
-				<li><a href="http://www.maxcdn.com/solutions/advertising/">Advertising</a></li>
-				<li><a href="http://www.maxcdn.com/solutions/cms/">CMS</a></li>
-				<li><a href="http://www.maxcdn.com/solutions/gaming/">Gaming</a></li>
+				<li><a id="footeradver" href="http://www.maxcdn.com/solutions/advertising/">Advertising</a></li>
+				<li><a id="footercms" href="http://www.maxcdn.com/solutions/cms/">CMS</a></li>
+				<li><a id="footergaming" href="http://www.maxcdn.com/solutions/gaming/">Gaming</a></li>
 			</ul>
 
 			<h3 class="orange">Support</h3>
 			<ul class="list">
-				<li><a href="http://support.maxcdn.com/kb/">Knowledge Base</a></li>
-				<li><a href="http://support.maxcdn.com/cms-plugins/">CMS Plugins</a></li>
-				<li><a href="http://docs.maxcdn.com/">Developers/API</a></li>
-				<li><a href="http://www.maxcdn.com/forum/">Forum</a></li>
-				<li><a href="http://www.maxcdn.com/company/affiliates/">Affiliates</a></li>
-				<li><a href="http://status.maxcdn.com/">Status</a></li>
+				<li><a id="footerbase" href="http://support.maxcdn.com/kb/">Knowledge Base</a></li>
+				<li><a id="footercmsplugins" href="http://support.maxcdn.com/cms-plugins/">CMS Plugins</a></li>
+				<li><a id="footerapi" href="http://docs.maxcdn.com/">Developers/API</a></li>
+				<li><a id="footerforum" href="http://www.maxcdn.com/forum/">Forum</a></li>
+				<li><a id="footeraff" href="http://www.maxcdn.com/company/affiliates/">Affiliates</a></li>
+				<li><a id="footerstatus" href="http://status.maxcdn.com/">Status</a></li>
 			</ul>
 		</div>
 		<div class="col">
 			<h3 class="orange">Company</h3>
 			<ul class="list">
-				<li><a href="http://www.maxcdn.com/company/customers/">Customers</a></li>
-				<li><a href="http://www.maxcdn.com/company/careers/">Careers</a></li>
-				<li><a href="http://blog.maxcdn.com/">Blog</a></li>
-				<li><a href="http://www.maxcdn.com/company/team/">Team</a></li>
-				<li><a href="http://www.maxcdn.com/press/">Press</a></li>
-				<li><a href="http://www.maxcdn.com/contact/">Contact</a></li>
+				<li><a id="footercustomers" href="http://www.maxcdn.com/company/customers/">Customers</a></li>
+				<li><a id="footercareer" href="http://www.maxcdn.com/company/careers/">Careers</a></li>
+				<li><a id="footerblog" href="http://blog.maxcdn.com/">Blog</a></li>
+				<li><a id="footerteam" href="http://www.maxcdn.com/company/team/">Team</a></li>
+				<li><a id="footerpress" href="http://www.maxcdn.com/press/">Press</a></li>
+				<li><a id="footercontact" href="http://www.maxcdn.com/contact/">Contact</a></li>
 			</ul>
 		</div>
+
 		<div class="col col-2">
 			<h3 class="orange">Telephone</h3>
 			<dl class="dlist">

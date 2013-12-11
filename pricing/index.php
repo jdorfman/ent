@@ -42,7 +42,7 @@
 			<div class="clearfix"></div>
 			<div class="textarea"><textarea class="required"  name="Contact_Form_Message__c" cols="30" rows="10" style="resize:none;" placeholder="Your Message"></textarea></div>
 			<div class="btn-holder">
-				<button class="btn" type="submit">Ask Ameer your question</button>
+				<button id="askameer" class="btn" type="submit">Ask Ameer your question</button>
 			</div>
 		</form>
 	</div>
@@ -64,7 +64,7 @@
 						<span class="unit">TB</span>
 					</div>
 				</div>
-				<button class="btn open-pricing" type="button">Estimate</button>
+				<button id="pricingestimate" class="btn open-pricing" type="button">Estimate</button>
 			</form>
 		</div>
 		<div class="price-section">
@@ -163,7 +163,7 @@
 						<div class="col">
 							<label>Message <span class="orange-text">*</span></label>
 							<textarea class="required" name="Contact_Form_Message__c" cols="30" rows="10" style="resize:none;"></textarea>
-							<button class="btn btn-submit" type="submit">Contact Us</button>
+							<button id="calcpricingcontact" class="btn btn-submit" type="submit">Contact Us</button>
 						</div>
 					</div>
 				</form>
@@ -216,7 +216,7 @@
 						<option value="101TB - 1,000TB">101TB - 1,000TB</option>
 						<option value="1PB+">1PB+</option>
 					</select>
-					<input type="submit" class="btn" value="Request Free Trial" />
+					<input id="pricingrequesttrial" type="submit" class="btn" value="Request Free Trial" />
 				</form>
 			</div>
 		</div>
