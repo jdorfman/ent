@@ -288,32 +288,3 @@
 </div><!-- /main -->
 
 <?php include('footer.php'); ?>
-
-<script>
-$(document).ready(function() {
-	$('.top-area .block .ttl').html('Enterprise-Level CDN &mdash; Global Flate Rate Pricing.')
-	$('.top-area .block p').replaceWith('<ul class="simple-list green"><li>SSL options at less than half the price of our closest competitor</li><li>Simple intuitive control panel &amp; 24/7 support, 365 days a year</li><li>World-wide ﬂat price — no extra fee for SSL traﬃc</li><ul>');
-	$('.top-area .block ul').css({
-		color: '#000',
-		font: "18px/33px 'OpenSans'",
-	});
-	$('.top-area .block ul li').css({
-		display: "inline-block",
-		padding: '0 0 1px 23px'
-	});
-	$('.top-area .btn-test').css({
-		background: '#27ae00',
-		boxShadow: '0 0 28px 10px #ffe200',
-		fontSize: '30px',
-		width: '608px',
-		height: '69px'
-	})
-	.html('Test MaxCDN &amp; Get a Free Speed Report')
-	.after('<p id="belowbtntext">Test MaxCDN against your current solution for free');
-	$("#belowbtntext").css({
-		color: "#000",
-		fontSize: ".65em",
-		margin: 0
-	});
-});
-</script>
